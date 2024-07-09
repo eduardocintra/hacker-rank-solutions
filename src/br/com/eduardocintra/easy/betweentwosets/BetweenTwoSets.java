@@ -42,25 +42,23 @@ class Result {
 public class BetweenTwoSets {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-//        String[] firstLine = sc.nextLine().split("\\s");
-//        int sizeArrayA = Integer.parseInt(firstLine[0]);
-//        int sizeArrayb = Integer.parseInt(firstLine[1]);
-//
-//        String[] strArrayA = sc.nextLine().split("\\s");
-//        List<Integer> arrayA = Arrays.stream(strArrayA).map(Integer::parseInt).collect(toList());
-//        if(sizeArrayA != arrayA.size()) {
-//            throw new InvalidClassException("Invalid size of array a");
-//        }
-//
-//
-//        String[] strArrayB = sc.nextLine().split("\\s");
-//        List<Integer> arrayB = Arrays.stream(strArrayB).map(Integer::parseInt).collect(toList());
-//        if(sizeArrayb != arrayB.size()) {
-//            throw new InvalidClassException("Invalid size of array b");
-//        }
+        String[] firstLine = sc.nextLine().split("\\s");
+        int sizeArrayA = Integer.parseInt(firstLine[0]);
+        int sizeArrayb = Integer.parseInt(firstLine[1]);
 
-        List<Integer> arrayA = Arrays.asList(2, 4);
-        List<Integer> arrayB = Arrays.asList(16, 32, 96);
+        String[] strArrayA = sc.nextLine().split("\\s");
+        List<Integer> arrayA = Arrays.stream(strArrayA).map(Integer::parseInt).collect(toList());
+        if(sizeArrayA != arrayA.size()) {
+            throw new InvalidClassException("Invalid size of array a");
+        }
+
+
+        String[] strArrayB = sc.nextLine().split("\\s");
+        List<Integer> arrayB = Arrays.stream(strArrayB).map(Integer::parseInt).collect(toList());
+        if(sizeArrayb != arrayB.size()) {
+            throw new InvalidClassException("Invalid size of array b");
+        }
+
         System.out.println(Result.getTotalX(arrayA, arrayB));
 
     }
