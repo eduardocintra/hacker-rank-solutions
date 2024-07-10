@@ -21,7 +21,7 @@ class Result {
             attemps++;
 
             if(!isPowerOfTwo(n)) {
-                long nextLowerPowerOfTwo = getNexLowerPowerOfTwo(n);
+                long nextLowerPowerOfTwo = getNextLowerPowerOfTwo(n);
                 n = n - nextLowerPowerOfTwo;
                 continue;
             }
@@ -36,7 +36,7 @@ class Result {
         return n > 0 && ((n & (n -1)) == 0);
     }
 
-    private static long getNexLowerPowerOfTwo(Long n) {
+    private static long getNextLowerPowerOfTwo(Long n) {
         long power = 1;
         while(power <= n) {
             power <<= 1;
