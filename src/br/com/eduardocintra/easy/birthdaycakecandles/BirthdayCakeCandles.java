@@ -1,9 +1,11 @@
 package br.com.eduardocintra.easy.birthdaycakecandles;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.security.InvalidParameterException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
-import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 class Result {
@@ -41,7 +43,7 @@ public class BirthdayCakeCandles {
         String[] arr = input.split("\\s");
 
         if(size != arr.length) {
-            throw new InvalidClassException("Amount of elements inputed are invalids");
+            throw new InvalidParameterException("Amount of elements inputed are invalids");
         }
 
         int result = Result.birthdayCakeCandles(Arrays.stream(arr).map(Integer::new).collect(toList()));

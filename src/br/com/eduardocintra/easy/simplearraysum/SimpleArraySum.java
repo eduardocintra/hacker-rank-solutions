@@ -1,9 +1,10 @@
 package br.com.eduardocintra.easy.simplearraysum;
 
-import java.io.*;
-import java.util.*;
-
-import static java.util.stream.Collectors.joining;
+import java.io.IOException;
+import java.security.InvalidParameterException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 class Result {
 
@@ -32,7 +33,7 @@ public class SimpleArraySum {
        String[] arr = input.split("\\s");
 
        if(arr.length != size) {
-           throw new InvalidClassException("The size of input is invalid");
+           throw new InvalidParameterException("The size of input is invalid");
        }
 
        ArrayList<Integer> ints = new ArrayList<>();

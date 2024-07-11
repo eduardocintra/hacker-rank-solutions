@@ -1,7 +1,7 @@
 package br.com.eduardocintra.easy.subarraydivision;
 
 import java.io.IOException;
-import java.io.InvalidClassException;
+import java.security.InvalidParameterException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -45,7 +45,7 @@ public class SubarrayDivision {
         int size = Integer.parseInt(sc.nextLine());
         List<Integer> numbers = Arrays.stream(sc.nextLine().split("\\s")).map(Integer::parseInt).collect(Collectors.toList());
         if(size != numbers.size()) {
-            throw new InvalidClassException("Size of array is invalid!");
+            throw new InvalidParameterException("Size of array is invalid!");
         }
         List<Integer> parameters = Arrays.stream(sc.nextLine().split("\\s")).map(Integer::parseInt).collect(Collectors.toList());
         int d = parameters.get(0);

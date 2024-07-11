@@ -1,7 +1,7 @@
 package br.com.eduardocintra.easy.comparethetriplets;
 
 import java.io.IOException;
-import java.io.InvalidClassException;
+import java.security.InvalidParameterException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -50,7 +50,7 @@ public class CompareTheTriplets {
         List<Integer> list2 = Stream.of(input2.split("\\s")).map(Integer::parseInt).collect(toList());
 
         if(list1.size() != list2.size()) {
-            throw new InvalidClassException("Invalid list sizes");
+            throw new InvalidParameterException("Invalid list sizes");
         }
 
         String result = Result.compareTriplets(list1, list2).stream().map(String::valueOf).collect(Collectors.joining(" "));

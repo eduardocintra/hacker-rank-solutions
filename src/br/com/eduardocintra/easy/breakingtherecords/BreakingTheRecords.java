@@ -1,8 +1,11 @@
 package br.com.eduardocintra.easy.breakingtherecords;
 
-import java.io.*;
-import java.util.*;
-import java.util.stream.*;
+import java.io.IOException;
+import java.security.InvalidParameterException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
@@ -45,7 +48,7 @@ public class BreakingTheRecords {
 
         String[] scoresStr = sc.nextLine().split("\\s");
         if(size != scoresStr.length) {
-            throw new InvalidClassException("Score array size is invalid");
+            throw new InvalidParameterException("Score array size is invalid");
         }
         List<Integer> scores = Arrays.stream(scoresStr).map(Integer::parseInt).collect(toList());
         List<Integer> result = Result.breakingRecords(scores);

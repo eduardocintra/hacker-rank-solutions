@@ -1,7 +1,9 @@
-import java.io.*;
-import java.util.*;
-import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
+import java.io.IOException;
+import java.security.InvalidParameterException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
 import static java.util.stream.Collectors.toList;
 
 class Result {
@@ -57,14 +59,14 @@ public class AppleAndOrange {
         String fourthLine = sc.nextLine();
         String[] stringsFourthLine = fourthLine.split("\\s");
         if(m != stringsFourthLine.length) {
-            throw new InvalidClassException("Invalid size of m array");
+            throw new InvalidParameterException("Invalid size of m array");
         }
         List<Integer> apples = Arrays.stream(stringsFourthLine).map(Integer::new).collect(toList());
 
         String fifthLine = sc.nextLine();
         String[] stringsFifthLine = fifthLine.split("\\s");
         if(n != stringsFifthLine.length) {
-            throw new InvalidClassException("Invalid size of n array");
+            throw new InvalidParameterException("Invalid size of n array");
         }
         List<Integer> oranges = Arrays.stream(stringsFifthLine).map(Integer::new).collect(toList());
 

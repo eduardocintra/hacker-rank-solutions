@@ -1,8 +1,11 @@
 package br.com.eduardocintra.easy.betweentwosets;
 
 import java.io.IOException;
-import java.io.InvalidClassException;
-import java.util.*;
+import java.security.InvalidParameterException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 
 import static java.util.stream.Collectors.toList;
 
@@ -49,14 +52,14 @@ public class BetweenTwoSets {
         String[] strArrayA = sc.nextLine().split("\\s");
         List<Integer> arrayA = Arrays.stream(strArrayA).map(Integer::parseInt).collect(toList());
         if(sizeArrayA != arrayA.size()) {
-            throw new InvalidClassException("Invalid size of array a");
+            throw new InvalidParameterException("Invalid size of array a");
         }
 
 
         String[] strArrayB = sc.nextLine().split("\\s");
         List<Integer> arrayB = Arrays.stream(strArrayB).map(Integer::parseInt).collect(toList());
         if(sizeArrayb != arrayB.size()) {
-            throw new InvalidClassException("Invalid size of array b");
+            throw new InvalidParameterException("Invalid size of array b");
         }
 
         System.out.println(Result.getTotalX(arrayA, arrayB));

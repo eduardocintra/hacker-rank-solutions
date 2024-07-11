@@ -1,16 +1,10 @@
 package br.com.eduardocintra.easy.averybigsum;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
-import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
+import java.io.IOException;
+import java.security.InvalidParameterException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 class Result {
 
@@ -37,7 +31,7 @@ public class AVeryBigSum {
         String[] arr = input.split("\\s");
 
         if(arr.length != size) {
-            throw new InvalidClassException("The size of input is invalid");
+            throw new InvalidParameterException("The size of input is invalid");
         }
 
         ArrayList<Long> longs = new ArrayList<>();
