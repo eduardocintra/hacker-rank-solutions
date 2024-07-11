@@ -1,9 +1,7 @@
 package br.com.eduardocintra.easy.dayoftheprogrammer;
 
-import java.io.*;
+import java.io.IOException;
 import java.util.Scanner;
-
-import static java.util.stream.Collectors.joining;
 
 class Result {
 
@@ -18,7 +16,7 @@ class Result {
         // Write your code here
         int daysRemaining = 256;
         int month = 0;
-        while(daysRemaining > 28) {
+        while(daysRemaining >= 30) {
             month++;
             daysRemaining -= getNumberOfDays(month, year);
         }
