@@ -27,7 +27,6 @@ class Result {
             System.out.println("Bon Appetit");
             return;
         }
-
         System.out.println(b-totalPerPerson);
     }//
 
