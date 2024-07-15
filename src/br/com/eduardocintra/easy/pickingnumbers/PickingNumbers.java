@@ -43,12 +43,9 @@ class Result {
     }
 
     private static boolean isValidNumber(List<Integer> subList, int numberTest) {
-        for(int number : subList) {
-            if(Math.abs(number-numberTest) > 1) {
-                return  false;
-            }
-        }
-        return true;
+        if(subList.isEmpty()) return true;
+        int firstNumber = subList.get(0);
+        return Math.abs(firstNumber-numberTest) <= 1;
     }
 
 }
