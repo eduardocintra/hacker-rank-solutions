@@ -1,4 +1,4 @@
-package br.com.eduardocintra.easy.beautifulfaysatthemovies;
+package br.com.eduardocintra.easy.beautifuldaysatthemovies;
 
 import java.io.IOException;
 import java.util.Arrays;
