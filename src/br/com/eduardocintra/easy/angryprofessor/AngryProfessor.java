@@ -20,8 +20,8 @@ class Result {
 
     public static String angryProfessor(int k, List<Integer> a) {
         // Write your code here
-        long lateCount = a.stream().filter(n -> n > 0).count();
-        return lateCount >= k ? "NO" : "YES";
+        long onTimeCount = a.stream().filter(n -> n <= 0).count();
+        return onTimeCount >= k ? "NO" : "YES";
     }
 
 }
