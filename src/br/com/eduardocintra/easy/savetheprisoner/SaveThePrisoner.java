@@ -9,34 +9,36 @@ import java.util.stream.IntStream;
 
 class Result {
 
-    /*
-     * Complete the 'saveThePrisoner' function below.
-     *
-     * The function is expected to return an INTEGER.
-     * The function accepts following parameters:
-     *  1. INTEGER n
-     *  2. INTEGER m
-     *  3. INTEGER s
-     */
+  /*
+   * Complete the 'saveThePrisoner' function below.
+   *
+   * The function is expected to return an INTEGER.
+   * The function accepts following parameters:
+   *  1. INTEGER n
+   *  2. INTEGER m
+   *  3. INTEGER s
+   */
 
-    public static int saveThePrisoner(int n, int m, int s) {
-        // Write your code here
-        int lastChair = (s + m - 1) % n;
-        return lastChair == 0 ? n : lastChair;
-    }
-
+  public static int saveThePrisoner(int n, int m, int s) {
+    // Write your code here
+    int lastChair = (s + m - 1) % n;
+    return lastChair == 0 ? n : lastChair;
+  }
 }
 
 public class SaveThePrisoner {
-    public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
+  public static void main(String[] args) throws IOException {
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int t = Integer.parseInt(bufferedReader.readLine().trim());
+    int t = Integer.parseInt(bufferedReader.readLine().trim());
 
-        IntStream.range(0, t).forEach(tItr -> {
-            try {
-                String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+    IntStream.range(0, t)
+        .forEach(
+            tItr -> {
+              try {
+                String[] firstMultipleInput =
+                    bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
 
                 int n = Integer.parseInt(firstMultipleInput[0]);
 
@@ -48,12 +50,12 @@ public class SaveThePrisoner {
 
                 bufferedWriter.write(String.valueOf(result));
                 bufferedWriter.newLine();
-            } catch (IOException ex) {
+              } catch (IOException ex) {
                 throw new RuntimeException(ex);
-            }
-        });
+              }
+            });
 
-        bufferedReader.close();
-        bufferedWriter.close();
-    }
+    bufferedReader.close();
+    bufferedWriter.close();
+  }
 }

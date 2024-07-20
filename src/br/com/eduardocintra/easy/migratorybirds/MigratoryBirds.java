@@ -8,39 +8,35 @@ import static java.util.stream.Collectors.toList;
 
 class Result {
 
-    /*
-     * Complete the 'migratoryBirds' function below.
-     *
-     * The function is expected to return an INTEGER.
-     * The function accepts INTEGER_ARRAY arr as parameter.
-     */
+  /*
+   * Complete the 'migratoryBirds' function below.
+   *
+   * The function is expected to return an INTEGER.
+   * The function accepts INTEGER_ARRAY arr as parameter.
+   */
 
-    public static int migratoryBirds(List<Integer> arr) {
-        // Write your code here
-        return arr.stream()
-                .collect(
-                    Collectors.groupingBy(n -> n)
-                )
-                .entrySet()
-                .stream()
-                .max(
-                    Comparator.comparingInt((Map.Entry<Integer, List<Integer>>entry) -> entry.getValue().size())
-                     .thenComparingInt((Map.Entry<Integer, List<Integer>> entry) -> -entry.getKey())
-                )
-                .map(Map.Entry::getKey).orElse(0);
-    }
-
+  public static int migratoryBirds(List<Integer> arr) {
+    // Write your code here
+    return arr.stream().collect(Collectors.groupingBy(n -> n)).entrySet().stream()
+        .max(
+            Comparator.comparingInt(
+                    (Map.Entry<Integer, List<Integer>> entry) -> entry.getValue().size())
+                .thenComparingInt((Map.Entry<Integer, List<Integer>> entry) -> -entry.getKey()))
+        .map(Map.Entry::getKey)
+        .orElse(0);
+  }
 }
 
 public class MigratoryBirds {
-    public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
-        int size = Integer.parseInt(sc.nextLine());
+  public static void main(String[] args) throws IOException {
+    Scanner sc = new Scanner(System.in);
+    int size = Integer.parseInt(sc.nextLine());
 
-        List<Integer> arr = Arrays.stream(sc.nextLine().split("\\s")).map(Integer::parseInt).collect(toList());
-        if(arr.size() != size) {
-            throw new IllegalArgumentException("Size of array is invalid");
-        }
-        System.out.println(Result.migratoryBirds(arr));
+    List<Integer> arr =
+        Arrays.stream(sc.nextLine().split("\\s")).map(Integer::parseInt).collect(toList());
+    if (arr.size() != size) {
+      throw new IllegalArgumentException("Size of array is invalid");
     }
+    System.out.println(Result.migratoryBirds(arr));
+  }
 }
