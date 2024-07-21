@@ -1,10 +1,10 @@
 package br.com.eduardocintra.easy.simplearraysum;
 
-import java.io.IOException;
-import java.security.InvalidParameterException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import static java.util.stream.Collectors.toList;
+
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
 
 class Result {
 
@@ -21,22 +21,23 @@ class Result {
 }
 
 public class SimpleArraySum {
-
   public static void main(String[] args) throws IOException {
-    Scanner sc = new Scanner(System.in);
-    int size = Integer.parseInt(sc.nextLine());
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
-    String input = sc.nextLine();
-    String[] arr = input.split("\\s");
+    int arCount = Integer.parseInt(bufferedReader.readLine().trim());
 
-    if (arr.length != size) {
-      throw new InvalidParameterException("The size of input is invalid");
-    }
+    List<Integer> ar =
+        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
 
-    ArrayList<Integer> ints = new ArrayList<>();
-    for (int i = 0; i < arr.length; i++) {
-      ints.add(Integer.valueOf(arr[i]));
-    }
-    System.out.println(Result.simpleArraySum(ints));
+    int result = Result.simpleArraySum(ar);
+
+    bufferedWriter.write(String.valueOf(result));
+    bufferedWriter.newLine();
+
+    bufferedReader.close();
+    bufferedWriter.close();
   }
 }
