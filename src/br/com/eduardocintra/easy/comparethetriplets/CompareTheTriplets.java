@@ -1,14 +1,11 @@
 package br.com.eduardocintra.easy.comparethetriplets;
 
-import java.io.IOException;
-import java.security.InvalidParameterException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
+import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
+
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
 
 class Result {
 
@@ -22,7 +19,6 @@ class Result {
    */
 
   public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
-
     Integer resultA = 0;
     Integer resultB = 0;
 
@@ -40,22 +36,24 @@ class Result {
 
 public class CompareTheTriplets {
   public static void main(String[] args) throws IOException {
-    Scanner sc = new Scanner(System.in);
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
-    String input1 = sc.nextLine();
-    List<Integer> list1 = Stream.of(input1.split("\\s")).map(Integer::parseInt).collect(toList());
+    List<Integer> a =
+        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
 
-    String input2 = sc.nextLine();
-    List<Integer> list2 = Stream.of(input2.split("\\s")).map(Integer::parseInt).collect(toList());
+    List<Integer> b =
+        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
 
-    if (list1.size() != list2.size()) {
-      throw new InvalidParameterException("Invalid list sizes");
-    }
+    List<Integer> result = Result.compareTriplets(a, b);
 
-    String result =
-        Result.compareTriplets(list1, list2).stream()
-            .map(String::valueOf)
-            .collect(Collectors.joining(" "));
-    System.out.println(result);
+    bufferedWriter.write(result.stream().map(Object::toString).collect(joining(" ")) + "\n");
+
+    bufferedReader.close();
+    bufferedWriter.close();
   }
 }
