@@ -1,10 +1,10 @@
 package br.com.eduardocintra.easy.averybigsum;
 
-import java.io.IOException;
-import java.security.InvalidParameterException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 
 class Result {
 
@@ -14,29 +14,32 @@ class Result {
    * The function is expected to return a LONG_INTEGER.
    * The function accepts LONG_INTEGER_ARRAY ar as parameter.
    */
+
   public static long aVeryBigSum(List<Long> ar) {
     // Write your code here
     return ar.stream().reduce(0L, Long::sum);
   }
+
 }
 
 public class AVeryBigSum {
-
   public static void main(String[] args) throws IOException {
-    Scanner sc = new Scanner(System.in);
-    int size = Integer.parseInt(sc.nextLine());
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter bufferedWriter =
+        new BufferedWriter(new OutputStreamWriter(System.out));
 
-    String input = sc.nextLine();
-    String[] arr = input.split("\\s");
+    int arCount = Integer.parseInt(bufferedReader.readLine().trim());
 
-    if (arr.length != size) {
-      throw new InvalidParameterException("The size of input is invalid");
-    }
+    List<Long> ar = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Long::parseLong)
+            .collect(toList());
 
-    ArrayList<Long> longs = new ArrayList<>();
-    for (int i = 0; i < arr.length; i++) {
-      longs.add(Long.valueOf(arr[i]));
-    }
-    System.out.println(Result.aVeryBigSum(longs));
+    long result = Result.aVeryBigSum(ar);
+
+    bufferedWriter.write(String.valueOf(result));
+    bufferedWriter.newLine();
+
+    bufferedReader.close();
+    bufferedWriter.close();
   }
 }
