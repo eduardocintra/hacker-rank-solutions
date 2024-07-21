@@ -1,11 +1,11 @@
 package br.com.eduardocintra.easy.plusminus;
 
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
 import static java.util.stream.Collectors.toList;
+
+import java.io.*;
+import java.text.*;
+import java.util.*;
+import java.util.stream.*;
 
 class Result {
 
@@ -22,29 +22,36 @@ class Result {
     int negativeCount = 0;
     int zeroCount = 0;
 
-    for (int i = 0; i < size; i++) {
+    for(int i = 0; i < size; i++) {
       int x = arr.get(i);
-      if (x > 0) positiveCount++;
-      if (x < 0) negativeCount++;
-      if (x == 0) zeroCount++;
+      if(x > 0) positiveCount++;
+      if(x < 0) negativeCount++;
+      if(x == 0) zeroCount++;
     }
 
-    double positiveRatio = (double) positiveCount / size;
-    double negativeRatio = (double) negativeCount / size;
+    double positiveRatio =  (double) positiveCount / size;
+    double negativeRatio =  (double) negativeCount / size;
     double zeroRatio = (double) zeroCount / size;
-    System.out.printf("%.6f\n", positiveRatio);
-    System.out.printf("%.6f\n", negativeRatio);
-    System.out.printf("%.6f\n", zeroRatio);
+    DecimalFormat df = new DecimalFormat("#.######");
+    System.out.println(df.format(positiveRatio));
+    System.out.println(df.format(negativeRatio));
+    System.out.println(df.format(zeroRatio));
   }
+
 }
 
 public class PlusMinus {
   public static void main(String[] args) throws IOException {
-    Scanner sc = new Scanner(System.in);
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-    String input = sc.nextLine();
-    String[] arr = input.split("\\s");
+    int n = Integer.parseInt(bufferedReader.readLine().trim());
 
-    Result.plusMinus(Arrays.stream(arr).map(Integer::new).collect(toList()));
+    List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
+
+    Result.plusMinus(arr);
+
+    bufferedReader.close();
   }
 }
