@@ -16,13 +16,10 @@ class Result {
    * The function accepts INTEGER_ARRAY arr as parameter.
    */
   public static List<Integer> cutTheSticks(List<Integer> arr) {
-    Collections.sort(arr);
     List<Integer> numberOfSticks = new ArrayList<>();
-
     while (!arr.isEmpty()) {
       int numberOfSticksCount = 0;
       int min = Collections.min(arr);
-
       ListIterator<Integer> iterator = arr.listIterator();
       while (iterator.hasNext()) {
         Integer item = iterator.next();
