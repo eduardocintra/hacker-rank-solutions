@@ -1,12 +1,10 @@
 package br.com.eduardocintra.easy.birthdaycakecandles;
 
-import java.io.IOException;
-import java.security.InvalidParameterException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
 import static java.util.stream.Collectors.toList;
+
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
 
 class Result {
 
@@ -20,33 +18,37 @@ class Result {
   public static int birthdayCakeCandles(List<Integer> candles) {
     int tallestCandleCount = 0;
     int tallestCandle = 0;
-    for (Integer candleHeight : candles) {
-      if (candleHeight == tallestCandle) tallestCandleCount++;
-      if (candleHeight > tallestCandle) {
+    for(Integer candleHeight: candles) {
+      if(candleHeight == tallestCandle) tallestCandleCount++;
+      if(candleHeight > tallestCandle) {
         tallestCandle = candleHeight;
         tallestCandleCount = 1;
       }
-    }
-    ;
+    };
 
     return tallestCandleCount;
   }
+
 }
 
 public class BirthdayCakeCandles {
   public static void main(String[] args) throws IOException {
-    Scanner sc = new Scanner(System.in);
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter bufferedWriter =
+        new BufferedWriter(new OutputStreamWriter(System.out));
 
-    int size = Integer.parseInt(sc.nextLine());
+    int candlesCount = Integer.parseInt(bufferedReader.readLine().trim());
 
-    String input = sc.nextLine();
-    String[] arr = input.split("\\s");
+    List<Integer> candles = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
 
-    if (size != arr.length) {
-      throw new InvalidParameterException("Amount of elements inputed are invalids");
-    }
+    int result = Result.birthdayCakeCandles(candles);
 
-    int result = Result.birthdayCakeCandles(Arrays.stream(arr).map(Integer::new).collect(toList()));
-    System.out.println(result);
+    bufferedWriter.write(String.valueOf(result));
+    bufferedWriter.newLine();
+
+    bufferedReader.close();
+    bufferedWriter.close();
   }
 }
