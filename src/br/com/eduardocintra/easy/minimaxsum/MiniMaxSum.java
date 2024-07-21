@@ -1,10 +1,10 @@
 package br.com.eduardocintra.easy.minimaxsum;
 
+import static java.util.stream.Collectors.toList;
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
 
 class Result {
 
@@ -15,13 +15,13 @@ class Result {
    */
 
   public static void miniMaxSum(List<Integer> arr) {
-    long min = Long.MAX_VALUE;
-    long max = Long.MIN_VALUE;
+    Long min = Long.MAX_VALUE;
+    Long max = Long.MIN_VALUE;
 
     for (int i = 0; i < arr.size(); i++) {
       int excludedIndex = i;
 
-      long sum =
+      Long sum =
           IntStream.range(0, arr.size())
               .filter(index -> index != excludedIndex)
               .mapToLong(index -> new Long(arr.get(index)))
@@ -30,18 +30,21 @@ class Result {
       if (sum < min) min = sum;
       if (sum > max) max = sum;
     }
-
     System.out.println(min + " " + max);
   }
 }
 
 public class MiniMaxSum {
   public static void main(String[] args) throws IOException {
-    Scanner sc = new Scanner(System.in);
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-    String input = sc.nextLine();
-    String[] arr = input.split("\\s");
+    List<Integer> arr =
+        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
 
-    Result.miniMaxSum(Arrays.stream(arr).map(Integer::new).collect(toList()));
+    Result.miniMaxSum(arr);
+
+    bufferedReader.close();
   }
 }
