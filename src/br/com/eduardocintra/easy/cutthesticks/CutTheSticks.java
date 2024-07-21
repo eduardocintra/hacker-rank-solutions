@@ -18,8 +18,8 @@ class Result {
   public static List<Integer> cutTheSticks(List<Integer> arr) {
     List<Integer> numberOfSticks = new ArrayList<>();
     while (!arr.isEmpty()) {
-      int numberOfSticksCount = 0;
       int min = Collections.min(arr);
+      numberOfSticks.add(arr.size());
       ListIterator<Integer> iterator = arr.listIterator();
       while (iterator.hasNext()) {
         Integer item = iterator.next();
@@ -28,9 +28,7 @@ class Result {
         } else {
           iterator.set(item - min);
         }
-        numberOfSticksCount++;
       }
-      numberOfSticks.add(numberOfSticksCount);
     }
     return numberOfSticks;
   }
