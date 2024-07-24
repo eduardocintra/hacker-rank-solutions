@@ -22,7 +22,10 @@ class Result {
 
   public static void countApplesAndOranges(
       int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     long amountApples =
         apples.stream()
             .filter(

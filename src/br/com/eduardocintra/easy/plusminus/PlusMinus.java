@@ -16,28 +16,30 @@ class Result {
    */
 
   public static void plusMinus(List<Integer> arr) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int size = arr.size();
     int positiveCount = 0;
     int negativeCount = 0;
     int zeroCount = 0;
 
-    for(int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) {
       int x = arr.get(i);
-      if(x > 0) positiveCount++;
-      if(x < 0) negativeCount++;
-      if(x == 0) zeroCount++;
+      if (x > 0) positiveCount++;
+      if (x < 0) negativeCount++;
+      if (x == 0) zeroCount++;
     }
 
-    double positiveRatio =  (double) positiveCount / size;
-    double negativeRatio =  (double) negativeCount / size;
+    double positiveRatio = (double) positiveCount / size;
+    double negativeRatio = (double) negativeCount / size;
     double zeroRatio = (double) zeroCount / size;
     DecimalFormat df = new DecimalFormat("#.######");
     System.out.println(df.format(positiveRatio));
     System.out.println(df.format(negativeRatio));
     System.out.println(df.format(zeroRatio));
   }
-
 }
 
 public class PlusMinus {
@@ -46,7 +48,8 @@ public class PlusMinus {
 
     int n = Integer.parseInt(bufferedReader.readLine().trim());
 
-    List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+    List<Integer> arr =
+        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
             .map(Integer::parseInt)
             .collect(toList());
 

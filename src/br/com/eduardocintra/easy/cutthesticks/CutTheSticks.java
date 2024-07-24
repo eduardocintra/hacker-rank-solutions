@@ -16,6 +16,10 @@ class Result {
    * The function accepts INTEGER_ARRAY arr as parameter.
    */
   public static List<Integer> cutTheSticks(List<Integer> arr) {
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     List<Integer> numberOfSticks = new ArrayList<>();
     while (!arr.isEmpty()) {
       int min = Collections.min(arr);

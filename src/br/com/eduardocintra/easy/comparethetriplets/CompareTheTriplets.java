@@ -19,6 +19,10 @@ class Result {
    */
 
   public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     Integer resultA = 0;
     Integer resultB = 0;
 

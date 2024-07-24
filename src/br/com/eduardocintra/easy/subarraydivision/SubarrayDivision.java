@@ -20,7 +20,10 @@ class Result {
    */
 
   public static int birthday(List<Integer> s, int d, int m) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int numberOfWays = 0;
 
     for (int i = 0; i < s.size(); i++) {

@@ -13,7 +13,10 @@ class Result {
    */
 
   public static int findDigits(int n) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     String nStr = String.valueOf(n);
     int count = 0;
     for (int k = 0; k < nStr.length(); k++) {

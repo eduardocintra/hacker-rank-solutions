@@ -19,6 +19,10 @@ class Result {
    */
 
   public static int divisibleSumPairs(int n, int k, List<Integer> ar) {
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int totalOfPairs = 0;
     for (int i = 0; i < n; i++) {
       for (int j = i; j < n; j++) {

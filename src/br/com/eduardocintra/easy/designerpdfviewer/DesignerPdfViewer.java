@@ -19,7 +19,10 @@ class Result {
    */
 
   public static int designerPdfViewer(List<Integer> h, String word) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     List<Integer> letterHeights =
         word.chars().boxed().map(c -> h.get(c - 97)).collect(Collectors.toList());
     int maxHeight = Collections.max(letterHeights);

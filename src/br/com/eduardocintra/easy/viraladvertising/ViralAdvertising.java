@@ -13,7 +13,10 @@ class Result {
    */
 
   public static int viralAdvertising(int n) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int cumulative = 2;
     int shared = 5;
     for (int i = 1; i < n; i++) {

@@ -15,7 +15,10 @@ class Result {
    */
 
   public static String appendAndDelete(String s, String t, int k) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
 
     // If the strings are equal and the number of operations is even, it's possible to transfor t s
     // into t  in exactly k operations

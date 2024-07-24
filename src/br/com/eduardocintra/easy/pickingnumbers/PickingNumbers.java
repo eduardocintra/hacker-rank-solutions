@@ -20,7 +20,10 @@ class Result {
    */
 
   public static int pickingNumbers(List<Integer> a) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     Collections.sort(a);
     List<Integer> sub = new ArrayList<>();
     int i = 0;

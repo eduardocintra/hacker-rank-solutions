@@ -15,7 +15,11 @@ class Result {
    */
 
   public static int pageCount(int n, int p) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
+
     // Fix number of page when is an even number of pages
     if (n % 2 == 0) n += 1;
     int costStartToEnd = p / 2;

@@ -16,7 +16,10 @@ class Result {
    */
 
   public static int migratoryBirds(List<Integer> arr) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     return arr.stream().collect(Collectors.groupingBy(n -> n)).entrySet().stream()
         .max(
             Comparator.comparingInt(

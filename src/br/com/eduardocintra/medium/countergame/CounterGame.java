@@ -15,7 +15,10 @@ class Result {
    */
 
   public static String counterGame(long n) {
-
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int attemps = 0;
     do {
       attemps++;

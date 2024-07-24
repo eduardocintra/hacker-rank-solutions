@@ -11,6 +11,10 @@ public class CatsAndAMouse {
 
   // Complete the catAndMouse function below.
   static String catAndMouse(int x, int y, int z) {
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int distanceA = Math.abs(x - z);
     int distanceB = Math.abs(y - z);
     if (distanceA == distanceB) {

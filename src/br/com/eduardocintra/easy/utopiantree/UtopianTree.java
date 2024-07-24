@@ -15,7 +15,10 @@ class Result {
    */
 
   public static int utopianTree(int n) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int height = 1;
     for (int i = 1; i <= n; i++) {
       if (i % 2 == 0) {

@@ -16,6 +16,10 @@ class Result {
    */
 
   public static int simpleArraySum(List<Integer> ar) {
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     return ar.stream().reduce(0, Integer::sum);
   }
 }

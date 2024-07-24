@@ -16,6 +16,10 @@ class Result {
    */
 
   public static int diagonalDifference(List<List<Integer>> arr) {
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int leftToRighDiagonalSum = 0;
     int rightToLeftDiagonalSum = 0;
 

@@ -15,6 +15,10 @@ class Result {
    */
 
   public static void miniMaxSum(List<Integer> arr) {
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     Long min = Long.MAX_VALUE;
     Long max = Long.MIN_VALUE;
 

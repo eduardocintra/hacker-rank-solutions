@@ -19,7 +19,10 @@ class Result {
    */
 
   public static String kangaroo(int x1, int v1, int x2, int v2) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     if (v1 <= v2) return "NO";
     return (x2 - x1) % (v1 - v2) == 0 ? "YES" : "NO";
   }

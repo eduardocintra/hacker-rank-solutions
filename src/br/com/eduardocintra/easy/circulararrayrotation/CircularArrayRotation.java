@@ -20,7 +20,10 @@ class Result {
    */
 
   public static List<Integer> circularArrayRotation(List<Integer> a, int k, List<Integer> queries) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     for (int i = 0; i < k; i++) {
       int lastElement = a.remove(a.size() - 1);
       a.add(0, lastElement);

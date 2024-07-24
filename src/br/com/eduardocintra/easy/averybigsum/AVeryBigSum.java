@@ -16,21 +16,23 @@ class Result {
    */
 
   public static long aVeryBigSum(List<Long> ar) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     return ar.stream().reduce(0L, Long::sum);
   }
-
 }
 
 public class AVeryBigSum {
   public static void main(String[] args) throws IOException {
     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-    BufferedWriter bufferedWriter =
-        new BufferedWriter(new OutputStreamWriter(System.out));
+    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
     int arCount = Integer.parseInt(bufferedReader.readLine().trim());
 
-    List<Long> ar = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+    List<Long> ar =
+        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
             .map(Long::parseLong)
             .collect(toList());
 

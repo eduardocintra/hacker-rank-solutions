@@ -15,12 +15,14 @@ class Result {
    */
 
   public static int squares(int a, int b) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     a = (int) Math.ceil(Math.sqrt(a));
     b = (int) Math.floor(Math.sqrt(b));
     return b - a + 1;
   }
-
 }
 
 public class SherlockAndSquares {

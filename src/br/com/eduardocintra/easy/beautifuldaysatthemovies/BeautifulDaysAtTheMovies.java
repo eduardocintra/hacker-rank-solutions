@@ -19,7 +19,10 @@ class Result {
    */
 
   public static int beautifulDays(int i, int j, int k) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int beautifulDaysCount = 0;
     for (; i <= j; i++) {
       int difference = i - reverseNumber(i);

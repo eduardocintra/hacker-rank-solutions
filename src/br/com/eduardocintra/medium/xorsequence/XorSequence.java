@@ -7,7 +7,10 @@ public class XorSequence {
 
   // Complete the xorSequence function below.
   static long xorSequence(long l, long r) {
-
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     return calculateXor(l - 1) ^ calculateXor(r);
   }
 

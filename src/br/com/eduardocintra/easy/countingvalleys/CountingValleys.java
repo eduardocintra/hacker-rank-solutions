@@ -16,7 +16,10 @@ class Result {
    */
 
   public static int countingValleys(int steps, String path) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int seaLevel = 0;
     int valleys = 0;
     for (int i = 0; i < path.length(); i++) {

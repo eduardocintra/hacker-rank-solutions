@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 class Result {
@@ -19,7 +20,10 @@ class Result {
    */
 
   public static String angryProfessor(int k, List<Integer> a) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     long onTimeCount = a.stream().filter(n -> n <= 0).count();
     return onTimeCount >= k ? "NO" : "YES";
   }

@@ -20,7 +20,10 @@ class Result {
    */
 
   public static void bonAppetit(List<Integer> bill, int k, int b) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int total = bill.stream().filter(amount -> amount != bill.get(k)).reduce(0, Integer::sum);
     int totalPerPerson = total / 2;
     if (totalPerPerson == b) {

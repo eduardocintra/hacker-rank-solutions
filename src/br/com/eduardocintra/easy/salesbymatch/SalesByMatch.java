@@ -17,7 +17,10 @@ class Result {
    */
 
   public static int sockMerchant(int n, List<Integer> ar) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     return ar.stream().collect(Collectors.groupingBy(item -> item)).values().stream()
         .mapToInt(integers -> integers.size() / 2)
         .sum();

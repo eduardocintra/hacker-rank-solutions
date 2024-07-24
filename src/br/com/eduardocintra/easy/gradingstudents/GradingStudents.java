@@ -19,7 +19,10 @@ class Result {
    */
 
   public static List<Integer> gradingStudents(List<Integer> grades) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     return grades.stream().map(Result::calculateGrade).collect(toList());
   }
 

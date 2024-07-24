@@ -20,7 +20,10 @@ class Result {
    */
 
   public static int saveThePrisoner(int n, int m, int s) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int lastChair = (s + m - 1) % n;
     return lastChair == 0 ? n : lastChair;
   }

@@ -15,7 +15,10 @@ class Result {
    */
 
   public static int maximizingXor(int l, int r) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int max = 0;
 
     for (; l <= r; l++) {

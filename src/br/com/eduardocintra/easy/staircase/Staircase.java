@@ -12,8 +12,8 @@ class Result {
 
   public static void staircase(int n) {
     for (int i = 1; i <= n; i++) {
-      for(int k = 0;  k <i; k++) {
-        if(k == 0) printSpaces(n-i);
+      for (int k = 0; k < i; k++) {
+        if (k == 0) printSpaces(n - i);
         System.out.print("#");
       }
       System.out.println();
@@ -21,7 +21,11 @@ class Result {
   }
 
   private static void printSpaces(int n) {
-    for(int i = 0; i < n; i++) {
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
+    for (int i = 0; i < n; i++) {
       System.out.print(" ");
     }
   }

@@ -11,7 +11,8 @@ public class ElectronicsShop {
    */
   static int getMoneySpent(int[] keyboards, int[] drives, int b) {
     /*
-     * Write your code here.
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
      */
     int moneySpent = -1;
     for (int keyBoardPrice : keyboards) {

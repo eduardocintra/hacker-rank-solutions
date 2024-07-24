@@ -13,7 +13,10 @@ class Result {
    */
 
   public static String dayOfProgrammer(int year) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int daysRemaining = 256;
     int month = 0;
     while (daysRemaining >= 30) {

@@ -17,6 +17,10 @@ class Result {
    */
 
   public static List<Integer> permutationEquation(List<Integer> p) {
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int size = p.size();
     List<Integer> finalArray = new ArrayList<>();
     for (int x = 1; x <= size; x++) {

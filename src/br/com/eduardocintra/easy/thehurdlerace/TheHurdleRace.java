@@ -21,7 +21,10 @@ class Result {
    */
 
   public static int hurdleRace(int k, List<Integer> height) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int highestObstacle = Collections.max(height);
     int minimumNumberDoses = highestObstacle - k;
     return Math.max(minimumNumberDoses, 0);

@@ -13,7 +13,10 @@ class Result {
    *  2. LONG_INTEGER n
    */
   public static long repeatedString(String s, long n) {
-    // Write your code here
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int size = s.length();
     char targetLetter = 'a';
     long countOfTargetLetterInString = countLetter(s, 'a');

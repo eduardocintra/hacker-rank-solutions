@@ -13,6 +13,10 @@ class Result {
    * The function accepts STRING s as parameter.
    */
   public static String timeConversion(String s) {
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     String format = s.replaceAll("[^APM]", "");
     String sWithoutFormat = s.replaceAll("[APM]", "");
     String[] aTime = sWithoutFormat.split(":");

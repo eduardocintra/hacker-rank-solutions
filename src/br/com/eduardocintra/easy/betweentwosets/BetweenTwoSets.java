@@ -21,6 +21,10 @@ class Result {
    */
 
   public static int getTotalX(List<Integer> a, List<Integer> b) {
+    /*
+     * Please, if this code helps you, leave your star on the repository:
+     * https://github.com/eduardocintra/hacker-rank-solutions
+     */
     int lastItemArrayA = Collections.max(a);
     int lastItemArrayB = Collections.max(b);
     int counter = 0;
