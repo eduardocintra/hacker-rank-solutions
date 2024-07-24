@@ -1,9 +1,9 @@
-package br.com.eduardocintra.easy.jumpingontheclouds;
+package br.com.eduardocintra.easy.jumpingonthecloudsrevisited;
 
 import java.io.*;
 import java.util.*;
 
-public class JumpingOnTheClouds {
+public class JumpingOnTheCloudsRevisited {
 
   // Complete the jumpingOnClouds function below.
   static int jumpingOnClouds(int[] c, int k) {
