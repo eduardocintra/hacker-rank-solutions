@@ -1,10 +1,10 @@
 package br.com.eduardocintra.easy.migratorybirds;
 
+import static java.util.stream.Collectors.toList;
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
 
 class Result {
 
@@ -32,14 +32,22 @@ class Result {
 
 public class MigratoryBirds {
   public static void main(String[] args) throws IOException {
-    Scanner sc = new Scanner(System.in);
-    int size = Integer.parseInt(sc.nextLine());
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
+
+    int arrCount = Integer.parseInt(bufferedReader.readLine().trim());
 
     List<Integer> arr =
-        Arrays.stream(sc.nextLine().split("\\s")).map(Integer::parseInt).collect(toList());
-    if (arr.size() != size) {
-      throw new IllegalArgumentException("Size of array is invalid");
-    }
-    System.out.println(Result.migratoryBirds(arr));
+        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
+
+    int result = Result.migratoryBirds(arr);
+
+    bufferedWriter.write(String.valueOf(result));
+    bufferedWriter.newLine();
+
+    bufferedReader.close();
+    bufferedWriter.close();
   }
 }

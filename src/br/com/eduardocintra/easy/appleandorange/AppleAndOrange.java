@@ -1,10 +1,16 @@
-import java.io.IOException;
-import java.security.InvalidParameterException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+package br.com.eduardocintra.easy.appleandorange;
 
 import static java.util.stream.Collectors.toList;
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
 
 class Result {
 
@@ -49,38 +55,38 @@ class Result {
 
 public class AppleAndOrange {
   public static void main(String[] args) throws IOException {
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-    Scanner sc = new Scanner(System.in);
+    String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
 
-    String firstLine = sc.nextLine();
-    String[] stringsFirstLine = firstLine.split("\\s");
-    int l = Integer.parseInt(stringsFirstLine[0]);
-    int t = Integer.parseInt(stringsFirstLine[1]);
+    int s = Integer.parseInt(firstMultipleInput[0]);
 
-    String secondLine = sc.nextLine();
-    String[] stringsSecondLine = secondLine.split("\\s");
-    int a = Integer.parseInt(stringsSecondLine[0]);
-    int b = Integer.parseInt(stringsSecondLine[1]);
+    int t = Integer.parseInt(firstMultipleInput[1]);
 
-    String thirdLine = sc.nextLine();
-    String[] stringsThirdLine = thirdLine.split("\\s");
-    int m = Integer.parseInt(stringsThirdLine[0]);
-    int n = Integer.parseInt(stringsThirdLine[1]);
+    String[] secondMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
 
-    String fourthLine = sc.nextLine();
-    String[] stringsFourthLine = fourthLine.split("\\s");
-    if (m != stringsFourthLine.length) {
-      throw new InvalidParameterException("Invalid size of m array");
-    }
-    List<Integer> apples = Arrays.stream(stringsFourthLine).map(Integer::new).collect(toList());
+    int a = Integer.parseInt(secondMultipleInput[0]);
 
-    String fifthLine = sc.nextLine();
-    String[] stringsFifthLine = fifthLine.split("\\s");
-    if (n != stringsFifthLine.length) {
-      throw new InvalidParameterException("Invalid size of n array");
-    }
-    List<Integer> oranges = Arrays.stream(stringsFifthLine).map(Integer::new).collect(toList());
+    int b = Integer.parseInt(secondMultipleInput[1]);
 
-    Result.countApplesAndOranges(l, t, a, b, apples, oranges);
+    String[] thirdMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+    int m = Integer.parseInt(thirdMultipleInput[0]);
+
+    int n = Integer.parseInt(thirdMultipleInput[1]);
+
+    List<Integer> apples =
+        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
+
+    List<Integer> oranges =
+        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
+
+    Result.countApplesAndOranges(s, t, a, b, apples, oranges);
+
+    bufferedReader.close();
   }
 }

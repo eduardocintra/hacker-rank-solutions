@@ -38,12 +38,30 @@ class Result {
 
 public class GradingStudents {
   public static void main(String[] args) throws IOException {
-    Scanner sc = new Scanner(System.in);
-    int amout = Integer.parseInt(sc.nextLine());
-    List<Integer> numbers = new ArrayList<>();
-    for (int i = 0; i < amout; i++) {
-      numbers.add(Integer.parseInt(sc.nextLine()));
-    }
-    Result.gradingStudents(numbers).forEach(System.out::println);
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
+
+    int gradesCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+    List<Integer> grades =
+        IntStream.range(0, gradesCount)
+            .mapToObj(
+                i -> {
+                  try {
+                    return bufferedReader.readLine().replaceAll("\\s+$", "");
+                  } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                  }
+                })
+            .map(String::trim)
+            .map(Integer::parseInt)
+            .collect(toList());
+
+    List<Integer> result = Result.gradingStudents(grades);
+
+    bufferedWriter.write(result.stream().map(Object::toString).collect(joining("\n")) + "\n");
+
+    bufferedReader.close();
+    bufferedWriter.close();
   }
 }

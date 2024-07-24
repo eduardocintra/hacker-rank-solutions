@@ -35,14 +35,26 @@ class Result {
 
 public class DivisibleSumPairs {
   public static void main(String[] args) throws IOException {
-    Scanner sc = new Scanner(System.in);
-    List<Integer> parameters =
-        Arrays.stream(sc.nextLine().split("\\s")).map(Integer::parseInt).collect(toList());
-    int n = parameters.get(0);
-    int k = parameters.get(1);
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
-    List<Integer> numbers =
-        Arrays.stream(sc.nextLine().split("\\s")).map(Integer::parseInt).collect(toList());
-    System.out.println(Result.divisibleSumPairs(n, k, numbers));
+    String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+    int n = Integer.parseInt(firstMultipleInput[0]);
+
+    int k = Integer.parseInt(firstMultipleInput[1]);
+
+    List<Integer> ar =
+        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
+
+    int result = Result.divisibleSumPairs(n, k, ar);
+
+    bufferedWriter.write(String.valueOf(result));
+    bufferedWriter.newLine();
+
+    bufferedReader.close();
+    bufferedWriter.close();
   }
 }

@@ -1,13 +1,16 @@
 package br.com.eduardocintra.easy.betweentwosets;
 
-import java.io.IOException;
-import java.security.InvalidParameterException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
-
 import static java.util.stream.Collectors.toList;
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
 
 class Result {
 
@@ -47,23 +50,31 @@ class Result {
 
 public class BetweenTwoSets {
   public static void main(String[] args) throws IOException {
-    Scanner sc = new Scanner(System.in);
-    String[] firstLine = sc.nextLine().split("\\s");
-    int sizeArrayA = Integer.parseInt(firstLine[0]);
-    int sizeArrayb = Integer.parseInt(firstLine[1]);
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
-    String[] strArrayA = sc.nextLine().split("\\s");
-    List<Integer> arrayA = Arrays.stream(strArrayA).map(Integer::parseInt).collect(toList());
-    if (sizeArrayA != arrayA.size()) {
-      throw new InvalidParameterException("Invalid size of array a");
-    }
+    String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
 
-    String[] strArrayB = sc.nextLine().split("\\s");
-    List<Integer> arrayB = Arrays.stream(strArrayB).map(Integer::parseInt).collect(toList());
-    if (sizeArrayb != arrayB.size()) {
-      throw new InvalidParameterException("Invalid size of array b");
-    }
+    int n = Integer.parseInt(firstMultipleInput[0]);
 
-    System.out.println(Result.getTotalX(arrayA, arrayB));
+    int m = Integer.parseInt(firstMultipleInput[1]);
+
+    List<Integer> arr =
+        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
+
+    List<Integer> brr =
+        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
+
+    int total = Result.getTotalX(arr, brr);
+
+    bufferedWriter.write(String.valueOf(total));
+    bufferedWriter.newLine();
+
+    bufferedReader.close();
+    bufferedWriter.close();
   }
 }
