@@ -1,7 +1,7 @@
 # HackerRank Challenges Resolved
 This repository aims to maintain my solutions for HackerRank challenges using the Java programming language.
 
-**Observation:** Please, if this code helps you, leave your star on the repository.
+**Observation:** Please, if these solutions helps you, leave your star on the repository.
 
 ## Easy
 <hr>
