@@ -24,7 +24,6 @@ class Result {
      */
     int totalBeautifulTriplets = 0;
     Set<Integer> uniqueElements = new HashSet<>(arr);
-
     for (int i : arr) {
       if (uniqueElements.contains(i + d) && uniqueElements.contains(i + d * 2)) {
         totalBeautifulTriplets++;
