@@ -9,7 +9,7 @@ import java.util.stream.*;
 class Result {
 
   /*
-   * Complete the 'beautifulTriplets' function below.
+   * Complete the 'beautifulTriplets' function below.A
    *
    * The function is expected to return an INTEGER.
    * The function accepts following parameters:
@@ -23,15 +23,11 @@ class Result {
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
     int totalBeautifulTriplets = 0;
-    for (int i = 0; i < arr.size(); i++) {
-      for (int j = i + 1; j < arr.size(); j++) {
-        if (arr.get(j) - arr.get(i) == d) {
-          for (int k = j + 1; k < arr.size(); k++) {
-            if (arr.get(k) - arr.get(j) == d) {
-              totalBeautifulTriplets++;
-            }
-          }
-        }
+    Set<Integer> uniqueElements = new HashSet<>(arr);
+
+    for (int i : arr) {
+      if (uniqueElements.contains(i + d) && uniqueElements.contains(i + d * 2)) {
+        totalBeautifulTriplets++;
       }
     }
     return totalBeautifulTriplets;
