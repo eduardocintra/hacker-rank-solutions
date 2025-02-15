@@ -23,18 +23,18 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    Integer resultA = 0;
-    Integer resultB = 0;
+    Integer aliceCount = 0;
+    Integer bobCount = 0;
 
     for (int i = 0; i < a.size(); i++) {
       if (a.get(i) > b.get(i)) {
-        resultA++;
+        aliceCount++;
       } else if (b.get(i) > a.get(i)) {
-        resultB++;
+        bobCount++;
       }
     }
 
-    return Arrays.asList(resultA, resultB);
+    return Arrays.asList(aliceCount, bobCount);
   }
 }
 
