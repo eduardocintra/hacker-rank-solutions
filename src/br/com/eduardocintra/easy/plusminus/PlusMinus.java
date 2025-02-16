@@ -1,11 +1,12 @@
 package br.com.eduardocintra.easy.plusminus;
 
-import static java.util.stream.Collectors.toList;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.List;
+import java.util.stream.Stream;
 
-import java.io.*;
-import java.text.*;
-import java.util.*;
-import java.util.stream.*;
+import static java.util.stream.Collectors.toList;
 
 class Result {
 
@@ -26,19 +27,15 @@ class Result {
     int zeroCount = 0;
 
     for (int i = 0; i < size; i++) {
-      int x = arr.get(i);
-      if (x > 0) positiveCount++;
-      if (x < 0) negativeCount++;
-      if (x == 0) zeroCount++;
+      int value = arr.get(i);
+      if (value > 0) positiveCount++;
+      if (value < 0) negativeCount++;
+      if (value == 0) zeroCount++;
     }
 
-    double positiveRatio = (double) positiveCount / size;
-    double negativeRatio = (double) negativeCount / size;
-    double zeroRatio = (double) zeroCount / size;
-    DecimalFormat df = new DecimalFormat("#.######");
-    System.out.println(df.format(positiveRatio));
-    System.out.println(df.format(negativeRatio));
-    System.out.println(df.format(zeroRatio));
+    System.out.printf("%.6f\n", positiveCount / (float) size);
+    System.out.printf("%.6f\n", negativeCount / (float) size);
+    System.out.printf("%.6f\n", zeroCount / (float) size);
   }
 }
 
