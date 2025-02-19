@@ -1,6 +1,9 @@
 package br.com.eduardocintra.easy.staircase;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Collections;
 
 class Result {
 
@@ -11,12 +14,10 @@ class Result {
    */
 
   public static void staircase(int n) {
-    for (int i = 1; i <= n; i++) {
-      for (int k = 0; k < i; k++) {
-        if (k == 0) printSpaces(n - i);
-        System.out.print("#");
-      }
-      System.out.println();
+    String line = String.join("", Collections.nCopies(n, "#"));
+    for(int i = 0; i < n; i++) {
+      int size = i + 1;
+      System.out.printf("%" + n + "s\n", line.substring(0, size));
     }
   }
 
