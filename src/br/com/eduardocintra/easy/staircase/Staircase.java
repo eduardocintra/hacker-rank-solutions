@@ -14,20 +14,14 @@ class Result {
    */
 
   public static void staircase(int n) {
-    String line = String.join("", Collections.nCopies(n, "#"));
-    for(int i = 0; i < n; i++) {
-      int size = i + 1;
-      System.out.printf("%" + n + "s\n", line.substring(0, size));
-    }
-  }
-
-  private static void printSpaces(int n) {
     /*
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    for (int i = 0; i < n; i++) {
-      System.out.print(" ");
+    String line = String.join("", Collections.nCopies(n, "#"));
+    for(int i = 0; i < n; i++) {
+      int size = i + 1;
+      System.out.printf("%" + n + "s\n", line.substring(0, size));
     }
   }
 }
