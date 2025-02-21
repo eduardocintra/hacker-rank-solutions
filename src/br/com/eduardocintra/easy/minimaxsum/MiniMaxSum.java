@@ -19,22 +19,19 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    Long min = Long.MAX_VALUE;
-    Long max = Long.MIN_VALUE;
+    long total = 0;
+    long max = Long.MIN_VALUE;
+    long min = Long.MAX_VALUE;
 
-    for (int i = 0; i < arr.size(); i++) {
-      int excludedIndex = i;
-
-      Long sum =
-          IntStream.range(0, arr.size())
-              .filter(index -> index != excludedIndex)
-              .mapToLong(index -> new Long(arr.get(index)))
-              .reduce(0, Long::sum);
-
-      if (sum < min) min = sum;
-      if (sum > max) max = sum;
+    for(long value : arr) {
+      total += value;
+      max = Math.max(max, value);
+      min = Math.min(min, value);
     }
-    System.out.println(min + " " + max);
+
+    long maxSum = total - min;
+    long minSum = total - max;
+    System.out.printf("%d %d\n", minSum, maxSum);
   }
 }
 
