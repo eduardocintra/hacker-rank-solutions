@@ -2,8 +2,6 @@ package br.com.eduardocintra.easy.timeconversion;
 
 import java.io.*;
 
-import static java.util.stream.Collectors.joining;
-
 class Result {
 
   /*
@@ -17,13 +15,21 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    String format = s.replaceAll("[^APM]", "");
-    String sWithoutFormat = s.replaceAll("[APM]", "");
-    String[] aTime = sWithoutFormat.split(":");
+    String ampm = s.substring(s.length() - 2);
+    String timePart = s.replace(ampm, "");
+    String[] aTime = timePart.split(":");
     int hour = Integer.parseInt(aTime[0]);
-    if (format.equalsIgnoreCase("PM") && hour != 12) hour += 12;
-    if (format.equalsIgnoreCase("AM") && hour == 12) hour = 0;
-    return String.format("%02d", hour) + ":" + aTime[1] + ":" + aTime[2];
+
+    boolean shouldAddTwelveHours = (ampm.equalsIgnoreCase("PM") && hour != 12) ||
+            (ampm.equalsIgnoreCase("AM") && hour == 12);
+    if (shouldAddTwelveHours) {
+      hour += 12;
+    }
+
+    if (hour == 24) {
+      hour = 0;
+    }
+    return String.format("%02d:%s:%s", hour, aTime[1], aTime[2]);
   }
 }
 
