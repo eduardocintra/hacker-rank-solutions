@@ -1,9 +1,8 @@
 package br.com.eduardocintra.easy.gradingstudents;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.joining;
@@ -23,16 +22,21 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    return grades.stream().map(Result::calculateGrade).collect(toList());
+    return grades.stream().map(originalNumber -> {
+      if( originalNumber < 38) {
+        return originalNumber;
+      }
+      Integer roundedNumber = getNextMultipleOfFive(originalNumber);
+      boolean isDifferenceLessThanThree = (roundedNumber - originalNumber) < 3;
+      return isDifferenceLessThanThree ? roundedNumber : originalNumber;
+    }).collect(Collectors.toList());
   }
 
-  private static Integer calculateGrade(Integer grade) {
-    if (grade < 38) return grade;
-    int originalGrade = grade;
-    while (grade % 5 != 0) {
-      grade++;
+  public static Integer getNextMultipleOfFive(Integer number) {
+    while(number % 5 != 0) {
+      number++;
     }
-    return grade - originalGrade < 3 ? grade : originalGrade;
+    return number;
   }
 }
 
