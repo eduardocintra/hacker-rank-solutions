@@ -20,8 +20,13 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    if (v1 <= v2) return "NO";
-    return (x2 - x1) % (v1 - v2) == 0 ? "YES" : "NO";
+    if(x2 > x1 && v2 >= v1) {
+      return "NO";
+    }
+
+    int speedDifference = v1 - v2;
+    int initialDifference = x2 - x1;
+    return initialDifference % speedDifference == 0 ? "YES" : "NO";
   }
 }
 
