@@ -28,23 +28,46 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    int lastItemArrayA = Collections.max(a);
-    int lastItemArrayB = Collections.max(b);
-    int counter = 0;
-    for (int i = lastItemArrayA; i <= lastItemArrayB; i++) {
-      if (areFactorsOf(a, i) && areAllMultiplesOf(b, i)) {
-        counter++;
+    long lcmA = mmc(a);
+    long gcdB = mdc(b);
+
+    if(lcmA > gcdB) {
+      return 0;
+    }
+
+    int count = 0;
+    for(long i = lcmA; i <= gcdB; i+= lcmA) {
+      if(gcdB % i == 0) {
+        count++;
       }
     }
-    return counter;
+
+    return count;
   }
 
-  private static boolean areFactorsOf(List<Integer> list, int number) {
-    return list.stream().allMatch(item -> number % item == 0);
+  public static long mdc(final List<Integer> numbers) {
+    long result = numbers.get(0);
+    for (int i = 1; i < numbers.size(); i++) {
+      result = mdc(result, numbers.get(i));
+    }
+    return result;
   }
 
-  private static boolean areAllMultiplesOf(List<Integer> list, int number) {
-    return list.stream().allMatch(item -> item % number == 0);
+
+  public static long mmc(final List<Integer> numbers) {
+    long result = numbers.get(0);
+    for (int i = 1; i < numbers.size(); i++) {
+      result = mmc(result, numbers.get(i));
+    }
+    return result;
+  }
+
+  public static long mdc(final long a, final long b) {
+    return b == 0 ? a : mdc(b, a % b);
+  }
+
+  public static long mmc(final long a, long b) {
+    return (a * b) / mdc(a, b);
   }
 }
 
