@@ -30,15 +30,17 @@ class Result {
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
     int numberOfWays = 0;
+    int sum = 0;
 
     for (int i = 0; i < s.size(); i++) {
-      int sum = 0;
-      for (int j = 0; j < m; j++) {
-        int position = i + j;
-        if (position < s.size()) sum += s.get(position);
-      }
+      sum += s.get(i);
 
-      if (sum == d) numberOfWays++;
+      if (i >= m - 1) {
+        if (sum == d)
+          numberOfWays++;
+
+        sum -= s.get(i - m + 1); // Remove the first element from the sum.
+      }
     }
 
     return numberOfWays;
