@@ -24,45 +24,19 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    int daysRemaining = 256;
-    int month = 0;
-    while (daysRemaining >= 30) {
-      month++;
-      daysRemaining -= getNumberOfDays(month, year);
+    // Transition from the Julian to Gregorian calendar
+    if (year == 1918) {
+      return "26.09." + year;
     }
-    return String.format("%02d.%02d.%04d", daysRemaining, month + 1, year);
-  }
 
-  private static int getFebruaryNumberOfDays(int year) {
-    if (year == 1918) return 15;
-    if (year > 1917 && year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) return 29;
-    if (year < 1917 && year % 4 == 0) return 29;
-    return 28;
-  }
+    boolean isJulianCalendar = year <= 1917;
+    boolean isGregorianCalendar = year >= 1919;
 
-  private static int getNumberOfDays(int month, int year) {
-    switch (month) {
-      case 1:
-        return 31;
-      case 2:
-        return getFebruaryNumberOfDays(year);
-      case 3:
-        return 31;
-      case 4:
-        return 30;
-      case 5:
-        return 31;
-      case 6:
-        return 30;
-      case 7:
-        return 31;
-      case 8:
-        return 31;
-      case 9:
-        return 30;
-      default:
-        return 0;
-    }
+    boolean isJulianLeapYear = isJulianCalendar && year % 4 == 0;
+    boolean isGregorianLeapYear = isGregorianCalendar && (year % 400 == 0 || year % 4 == 0 && year % 100 != 0);
+    boolean isLeapYear = isJulianLeapYear || isGregorianLeapYear;
+
+    return (isLeapYear ? "12.09." : "13.09.") + year;
   }
 }
 
