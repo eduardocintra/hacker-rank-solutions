@@ -24,14 +24,14 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    int total = bill.stream().filter(amount -> amount != bill.get(k)).reduce(0, Integer::sum);
-    int totalPerPerson = total / 2;
-    if (totalPerPerson == b) {
-      System.out.println("Bon Appetit");
-      return;
+    int totalShared = 0;
+    for(Integer value:bill) {
+      totalShared += value;
     }
-    System.out.println(b - totalPerPerson);
-  } //
+
+    int anaPart = (totalShared - bill.get(k)) / 2;
+    System.out.println(anaPart == b ? "Bon Appetit" : (b-anaPart));
+  }
 }
 
 public class BillDivision {
