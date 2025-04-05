@@ -2,8 +2,9 @@ package br.com.eduardocintra.easy.salesbymatch;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Set;
 
 class Result {
 
@@ -21,9 +22,17 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    return ar.stream().collect(Collectors.groupingBy(item -> item)).values().stream()
-        .mapToInt(integers -> integers.size() / 2)
-        .sum();
+    Set<Integer> pairs = new HashSet<>();
+    int totalPairs = 0;
+    for(int color: ar) {
+      if(pairs.contains(color)) {
+        totalPairs++;
+        pairs.remove(color);
+      } else {
+        pairs.add(color);
+      }
+    }
+    return totalPairs;
   }
 }
 
