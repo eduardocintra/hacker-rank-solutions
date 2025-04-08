@@ -20,24 +20,20 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    int seaLevel = 0;
-    int valleys = 0;
-    for (int i = 0; i < path.length(); i++) {
-      char c = path.charAt(i);
-      if (c == 'U') {
-        seaLevel++;
-      }
-
-      if (c == 'D') {
-        seaLevel--;
-      }
-
-      // Check if the hiker has returned to sea level from a valley.
-      if (seaLevel == 0 && c == 'U') {
-        valleys++;
+    int valleysCount = 0;
+    int position = 0;
+    for(int i = 0; i < path.length(); i++) {
+      char step = path.charAt(i);
+      if(step == 'U') {
+        position++;
+        if(position == 0) {
+          valleysCount++;
+        }
+      } else {
+        position--;
       }
     }
-    return valleys;
+    return valleysCount;
   }
 }
 
