@@ -19,12 +19,9 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-
-    // Fix number of page when is an even number of pages
-    if (n % 2 == 0) n += 1;
-    int costStartToEnd = p / 2;
-    int costEndToStart = (n - p) / 2;
-    return Math.min(costStartToEnd, costEndToStart);
+    int fromFront = p / 2;
+    int fromBack = n / 2 - p / 2;
+    return Math.min(fromFront, fromBack);
   }
 }
 
