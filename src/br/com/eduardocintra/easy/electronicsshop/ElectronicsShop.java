@@ -14,17 +14,33 @@ public class ElectronicsShop {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    int moneySpent = -1;
-    for (int keyBoardPrice : keyboards) {
-      for (int driverPrice : drives) {
-        int sum = keyBoardPrice + driverPrice;
-        if (sum <= b && sum > moneySpent) {
-          moneySpent = sum;
+    int max = -1;
+    Arrays.sort(drives);
+
+    for(int keyboardPrice: keyboards) {
+      int diff = b - keyboardPrice;
+      if(diff < 0) {
+        continue;
+      }
+
+      int low = 0;
+      int high = drives.length - 1;
+
+      while(low <= high) {
+        int mid = (low + high) / 2;
+        if(drives[mid] <= diff) {
+          low = mid + 1;
+        } else {
+          high = mid - 1;
         }
+      }
+
+      if(high >= 0) {
+        max = Math.max(max, (keyboardPrice + drives[high]));
       }
     }
 
-    return moneySpent;
+    return max;
   }
 
   public static void main(String[] args) throws IOException {
