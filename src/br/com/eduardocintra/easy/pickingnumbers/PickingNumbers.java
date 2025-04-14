@@ -2,11 +2,7 @@ package br.com.eduardocintra.easy.pickingnumbers;
 
 import java.io.IOException;
 import java.security.InvalidParameterException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static java.util.stream.Collectors.toList;
 
@@ -24,25 +20,19 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    Collections.sort(a);
-    List<Integer> sub = new ArrayList<>();
-    int i = 0;
-    int maxSize = 0;
-    while (i < a.size()) {
+    Map<Integer, Integer> frequency = new HashMap<Integer, Integer>();
 
-      int number = a.get(i);
-
-      if (isValidNumber(sub, number)) {
-        sub.add(number);
-        i++;
-      } else {
-        maxSize = Math.max(maxSize, sub.size());
-        sub = new ArrayList<>();
-      }
-
-      maxSize = Math.max(maxSize, sub.size());
+    for(Integer number: a) {
+      frequency.put(number, frequency.getOrDefault(number, 0)+1);
     }
-    return maxSize;
+
+    int max = 0;
+    for(int number: frequency.keySet()) {
+      int count = frequency.get(number) + frequency.getOrDefault(number + 1, 0);
+      max = Math.max(max, count);
+    }
+
+    return max;
   }
 
   private static boolean isValidNumber(List<Integer> subList, int numberTest) {
