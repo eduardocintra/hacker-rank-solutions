@@ -2,7 +2,6 @@ package br.com.eduardocintra.easy.designerpdfviewer;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -23,10 +22,12 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    List<Integer> letterHeights =
-        word.chars().boxed().map(c -> h.get(c - 97)).collect(Collectors.toList());
-    int maxHeight = Collections.max(letterHeights);
-    return word.length() * maxHeight;
+    int tallestLetter = 0;
+    for(char c: word.toCharArray()){
+      int height = h.get(c - 'a');
+      tallestLetter = Math.max(tallestLetter, height);
+    }
+    return tallestLetter * word.length();
   }
 }
 
