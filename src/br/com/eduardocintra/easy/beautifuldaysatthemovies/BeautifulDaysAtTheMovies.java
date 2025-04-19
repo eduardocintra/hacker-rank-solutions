@@ -23,21 +23,25 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    int beautifulDaysCount = 0;
-    for (; i <= j; i++) {
-      int difference = i - reverseNumber(i);
-      if (difference % k == 0) {
-        beautifulDaysCount++;
+    int beautifulDayCount = 0;
+    for(; i <= j; i++) {
+      int reversed = reverseNumber(i);
+      if((i - reversed) % k == 0) {
+        beautifulDayCount++;
       }
-    }
 
-    return beautifulDaysCount;
+    }
+    return beautifulDayCount;
   }
 
-  private static int reverseNumber(int number) {
-    String numberStr = Integer.toString(number);
-    StringBuilder sb = new StringBuilder(numberStr);
-    return Integer.valueOf(sb.reverse().toString());
+  public static int reverseNumber(int x) {
+    int reversed = 0;
+    while(x > 0) {
+      int digit = x % 10;
+      reversed = reversed * 10 + digit;
+      x = x / 10;
+    }
+    return reversed;
   }
 }
 
