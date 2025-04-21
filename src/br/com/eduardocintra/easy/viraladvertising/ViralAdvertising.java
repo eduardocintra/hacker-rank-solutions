@@ -17,13 +17,15 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    int cumulative = 2;
+    int cumulativeLikes = 0;
     int shared = 5;
-    for (int i = 1; i < n; i++) {
-      shared = shared / 2 * 3;
-      cumulative += shared / 2;
+    for(int i = 1; i <= n; i++) {
+      int liked = shared / 2;
+      cumulativeLikes += liked;
+      shared = liked * 3;
+
     }
-    return cumulative;
+    return cumulativeLikes;
   }
 }
 
