@@ -15,21 +15,14 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    String ampm = s.substring(s.length() - 2);
-    String timePart = s.replace(ampm, "");
-    String[] aTime = timePart.split(":");
-    int hour = Integer.parseInt(aTime[0]);
+      boolean isAmHour = s.endsWith("AM");
+      String[] time = s.substring(0, 8).split(":");
+      int hour = Integer.parseInt(time[0]);
+      if(isAmHour && hour == 12) hour = 0;
+      if(!isAmHour && hour != 12) hour += 12;
 
-    boolean shouldAddTwelveHours = (ampm.equalsIgnoreCase("PM") && hour != 12) ||
-            (ampm.equalsIgnoreCase("AM") && hour == 12);
-    if (shouldAddTwelveHours) {
-      hour += 12;
-    }
 
-    if (hour == 24) {
-      hour = 0;
-    }
-    return String.format("%02d:%s:%s", hour, aTime[1], aTime[2]);
+      return String.format("%02d:%s:%s", hour, time[1], time[2]);
   }
 }
 
