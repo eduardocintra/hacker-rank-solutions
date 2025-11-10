@@ -19,14 +19,24 @@ class Result {
     /*
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
+     *
+     * x1 + n * v1 = x2 + n * v2
+     * n * v1 = x2 - x1 + n * v2
+     * n * v1 - n * v2 = x2 - x1
+     * n ( v1 - v2 ) = x2 - x1
+     * n = (x2 - x1) / (v1 - v2)
+     *
+     * Condition:
+     * n ∈ Z && (v1 - v2) > 0
      */
     if(x2 > x1 && v2 >= v1) {
       return "NO";
     }
 
-    int speedDifference = v1 - v2;
-    int initialDifference = x2 - x1;
-    return initialDifference % speedDifference == 0 ? "YES" : "NO";
+    int dx = (x2 - x1);
+    int dv = (v1 - v2);
+
+    return dx % dv == 0 && (dx/dv) > 0 ? "YES" : "NO";
   }
 }
 
