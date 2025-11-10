@@ -1,16 +1,12 @@
 package br.com.eduardocintra.easy.appleandorange;
 
-import static java.util.stream.Collectors.toList;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.List;
+import java.util.stream.Stream;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
-import java.util.stream.*;
+import static java.util.stream.Collectors.toList;
 
 class Result {
 
@@ -32,25 +28,23 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    long amountApples =
-        apples.stream()
-            .filter(
-                position -> {
-                  return position + a >= s && position + a <= t;
-                })
-            .count();
+      int applesOnHouse = countFruitsOnHouse(apples, a, s, t);
+      int orangesOnHouse = countFruitsOnHouse(oranges, b, s, t);
 
-    long amountOranges =
-        oranges.stream()
-            .filter(
-                position -> {
-                  return position + b <= t && position + b >= s;
-                })
-            .count();
-
-    System.out.println(amountApples);
-    System.out.println(amountOranges);
+      System.out.println(applesOnHouse);
+      System.out.println(orangesOnHouse);
   }
+    private static int countFruitsOnHouse(final List<Integer> fruits, final int treePosition, final int s, final int t) {
+        int fruitsOnHouse = 0;
+        for(int p: fruits) {
+            int finalPosition = treePosition + p;
+            if(finalPosition >= s && finalPosition <= t) {
+                fruitsOnHouse++;
+            }
+        }
+
+        return fruitsOnHouse;
+    }
 }
 
 public class AppleAndOrange {
