@@ -22,22 +22,18 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    return grades.stream().map(originalNumber -> {
-      if( originalNumber < 38) {
-        return originalNumber;
-      }
-      Integer roundedNumber = getNextMultipleOfFive(originalNumber);
-      boolean isDifferenceLessThanThree = (roundedNumber - originalNumber) < 3;
-      return isDifferenceLessThanThree ? roundedNumber : originalNumber;
-    }).collect(Collectors.toList());
+      return grades.stream().map(Result::roundGrade).collect(Collectors.toList());
   }
 
-  public static Integer getNextMultipleOfFive(Integer number) {
-    while(number % 5 != 0) {
-      number++;
+    private static int roundGrade(int number) {
+        final int mod = 5;
+        if(number < 38) return number;
+
+        final int remainder = number % 5;
+        final int diffToNext = remainder == 0 ? 0 : mod - remainder;
+
+        return diffToNext < 3 ? number + diffToNext : number;
     }
-    return number;
-  }
 }
 
 public class GradingStudents {
