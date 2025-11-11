@@ -1,16 +1,10 @@
 package br.com.eduardocintra.easy.subarraydivision;
 
-import static java.util.stream.Collectors.toList;
-
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
-import java.util.stream.*;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 class Result {
 
@@ -32,17 +26,23 @@ class Result {
     int numberOfWays = 0;
     int sum = 0;
 
-    for (int i = 0; i < s.size(); i++) {
-      sum += s.get(i);
-
-      if (i >= m - 1) {
-        if (sum == d)
-          numberOfWays++;
-
-        sum -= s.get(i - m + 1); // Remove the first element from the sum.
-      }
+    for(int i = 0; i < m; i++) {
+      sum+= s.get(i);
     }
 
+    if(sum == d) {
+      numberOfWays++;
+    }
+
+    for(int i = m; i < s.size(); i++) {
+
+      //Enter the new, out the first
+      sum += s.get(i) - s.get(i-m);
+
+      if(sum == d) {
+          numberOfWays++;
+      }
+    }
     return numberOfWays;
   }
 }
