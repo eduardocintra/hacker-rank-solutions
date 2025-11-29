@@ -8,16 +8,16 @@ import java.util.Collections;
 class Result {
 
   /*
-   * Complete the 'staircase' function below.
+   * 007 - Staircase
+   * Difficulty: Easy
    *
-   * The function accepts INTEGER n as parameter.
+   * Problem: https://www.hackerrank.com/challenges/staircase/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/staircase/Staircase.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static void staircase(int n) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
     String line = String.join("", Collections.nCopies(n, "#"));
     for (int i = 0; i < n; i++) {
       int size = i + 1;
