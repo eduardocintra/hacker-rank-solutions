@@ -1,3 +1,4 @@
+<meta name="google-site-verification" content="nnh-26hsNhBsaEu_pUmaeKHw0hXSmpkJw1YVAkaAScI" />
 # HackerRank Challenges – Java Solutions
 
 ![Java](https://img.shields.io/badge/Java-17-blue)
