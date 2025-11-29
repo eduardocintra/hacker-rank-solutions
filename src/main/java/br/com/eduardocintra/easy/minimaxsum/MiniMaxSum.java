@@ -9,16 +9,16 @@ import java.util.stream.*;
 class Result {
 
   /*
-   * Complete the 'miniMaxSum' function below.
+   * 008 - Mini-Max Sum
+   * Difficulty: Easy
    *
-   * The function accepts INTEGER_ARRAY arr as parameter.
+   * Problem: https://www.hackerrank.com/challenges/mini-max-sum/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/minimaxsum/MiniMaxSum.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static void miniMaxSum(List<Integer> arr) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
     long total = 0;
     long max = Long.MIN_VALUE;
     long min = Long.MAX_VALUE;
