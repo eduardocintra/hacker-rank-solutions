@@ -3,11 +3,18 @@ package br.com.eduardocintra.easy.solvemefirst;
 import java.util.*;
 
 public class SolveMeFirst {
+
+  /*
+   * 001 - Solve Me First
+   * Difficulty: Easy
+   *
+   * Problem: https://www.hackerrank.com/challenges/solve-me-first/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/solvemefirst/SolveMeFirst.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
+   */
   static int solveMeFirst(int a, int b) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
     return a + b;
   }
 
