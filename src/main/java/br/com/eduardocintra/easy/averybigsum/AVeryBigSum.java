@@ -9,17 +9,16 @@ import java.util.stream.*;
 class Result {
 
   /*
-   * Complete the 'aVeryBigSum' function below.
+   * 004 - A Very Big Sum
+   * Difficulty: Easy
    *
-   * The function is expected to return a LONG_INTEGER.
-   * The function accepts LONG_INTEGER_ARRAY ar as parameter.
+   * Problem: https://www.hackerrank.com/challenges/a-very-big-sum/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/averybigsum/AVeryBigSum.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static long aVeryBigSum(List<Long> ar) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
     return ar.stream().reduce(0L, Long::sum);
   }
 }
