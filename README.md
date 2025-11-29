@@ -1,10 +1,101 @@
-# HackerRank Challenges Resolved
-This repository aims to maintain my solutions for HackerRank challenges using the Java programming language.
+# HackerRank Challenges – Java Solutions
 
-**Observation:** Please, if these solutions helps you, leave your star on the repository.
+![Java](https://img.shields.io/badge/Java-17-blue)
+![HackerRank](https://img.shields.io/badge/HackerRank-53_solved-brightgreen)
+![Easy](https://img.shields.io/badge/Easy-51-brightgreen)
+![Medium](https://img.shields.io/badge/Medium-2-yellow)
 
-## Easy
-<hr>
+This repository contains my Java solutions for HackerRank challenges.  
+It serves as a public log of my growth in algorithms and problem-solving.
+
+## 🎯 Why this repository exists
+
+I created this repository to:
+
+- Improve my problem‑solving and algorithmic thinking
+- Strengthen knowledge of data structures
+- Build consistency solving challenges daily
+- Keep a clean public portfolio for future international opportunities
+- Help other developers by sharing readable solutions
+
+If this project helps you, consider leaving a ⭐ — it really motivates me.
+
+---
+
+## 🚀 Progress Overview
+
+- **Total solved:** 53
+- **Easy:** 51
+- **Medium:** 2
+- **Hard:** coming soon...
+
+Updated frequently as new solutions are added.
+
+---
+
+## 📂 Folder Structure
+
+```
+src/
+ └── br/
+     └── com/
+         └── eduardocintra/
+             ├── easy/
+             ├── medium/
+             └── hard/ (future)
+```
+
+Each file includes:
+
+- Link to original problem
+- Explanation of approach
+- Time and space complexity
+- Clean and readable Java solution
+
+---
+
+## 📝 Solution Header Standard
+
+```java
+/**
+ * Problem: <Problem Name>
+ * Link: <HackerRank URL>
+ *
+ * Idea:
+ * - High-level explanation of the reasoning
+ * - Key steps to reach the solution
+ *
+ * Time Complexity: O(n)
+ * Space Complexity: O(1)
+ */
+```
+
+---
+
+## ▶️ How to Run
+
+Clone the repository:
+
+```bash
+git clone https://github.com/eduardocintra/hacker-rank-solutions.git
+cd hacker-rank-solutions
+```
+
+Build with Maven:
+
+```bash
+mvn clean install
+```
+
+Open the project in IntelliJ and run any solution containing a `main` method.
+
+---
+
+# 📘 List of Solved Challenges
+
+Below is the complete list of solutions currently implemented.
+
+### 🟢 Easy Challenges
 
 | #   | Challenge Name                                                                                                         | Solutions                                                                                                                      |
 |-----|------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
@@ -60,10 +151,44 @@ This repository aims to maintain my solutions for HackerRank challenges using th
 | 050 | [Minimum Distances](https://www.hackerrank.com/challenges/minimum-distances/problem?isFullScreen=true)                            | [MinimumDistances.java](./src/br/com/eduardocintra/easy/minimumdistances/MinimumDistances.java)                                                                |                                                                                                                                                      
 | 051 | [Halloween Sale](https://www.hackerrank.com/challenges/halloween-sale/problem?isFullScreen=true)                            | [HalloweenSale.java](./src/br/com/eduardocintra/easy/halloweensale/HalloweenSale.java)                                                                |                                                                                                                                                      
 
-## Medium
-<hr>
+---
+
+### 🟠 Medium Challenges
 
 | #   | Challenge Name                                                                               | Solutions                                                                          |
 |-----|----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
 | 001 | [Counter game](https://www.hackerrank.com/challenges/counter-game/problem?isFullScreen=true) | [CounterGame.java](./src/br/com/eduardocintra/medium/countergame/CounterGame.java) |
 | 002 | [Xor-sequence](https://www.hackerrank.com/challenges/xor-se/problem?isFullScreen=true)       | [XorSequence.java](./src/br/com/eduardocintra/medium/xorsequence/XorSequence.java) |
+
+More medium and hard problems coming soon.
+
+---
+
+## 🗺️ Roadmap
+
+- [x] Solve 50 Easy problems
+- [ ] Solve 100 Easy problems
+- [ ] Solve 50 Medium problems
+- [ ] Start solving Hard problems
+- [ ] Add English explanations for selected solutions
+- [ ] Reach 200+ total solved problems
+- [ ] Create daily/weekly coding schedule
+
+---
+
+## 🙋 About Me
+
+I'm a Senior Java Backend Engineer from Brazil, focused on mastering algorithms to reach international remote opportunities.
+
+- GitHub: https://github.com/eduardocintra
+- LinkedIn: https://www.linkedin.com/in/eduardocintramaia
+- HackerRank: https://www.hackerrank.com/profile/eduardocintra
+- Email: eduardocintramaia@gmail.com
+
+---
+
+## 🤝 Contributions
+
+If you have suggestions or improvements, feel free to open an issue or a pull request.  
+If any solution helped you, please ⭐ the repository.
+
