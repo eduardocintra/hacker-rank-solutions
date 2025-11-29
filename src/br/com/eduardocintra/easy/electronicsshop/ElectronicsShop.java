@@ -17,25 +17,25 @@ public class ElectronicsShop {
     int max = -1;
     Arrays.sort(drives);
 
-    for(int keyboardPrice: keyboards) {
+    for (int keyboardPrice : keyboards) {
       int diff = b - keyboardPrice;
-      if(diff < 0) {
+      if (diff < 0) {
         continue;
       }
 
       int low = 0;
       int high = drives.length - 1;
 
-      while(low <= high) {
+      while (low <= high) {
         int mid = (low + high) / 2;
-        if(drives[mid] <= diff) {
+        if (drives[mid] <= diff) {
           low = mid + 1;
         } else {
           high = mid - 1;
         }
       }
 
-      if(high >= 0) {
+      if (high >= 0) {
         max = Math.max(max, (keyboardPrice + drives[high]));
       }
     }

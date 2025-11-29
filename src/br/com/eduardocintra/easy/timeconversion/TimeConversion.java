@@ -15,14 +15,13 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-      boolean isAmHour = s.endsWith("AM");
-      String[] time = s.substring(0, 8).split(":");
-      int hour = Integer.parseInt(time[0]);
-      if(isAmHour && hour == 12) hour = 0;
-      if(!isAmHour && hour != 12) hour += 12;
+    boolean isAmHour = s.endsWith("AM");
+    String[] time = s.substring(0, 8).split(":");
+    int hour = Integer.parseInt(time[0]);
+    if (isAmHour && hour == 12) hour = 0;
+    if (!isAmHour && hour != 12) hour += 12;
 
-
-      return String.format("%02d:%s:%s", hour, time[1], time[2]);
+    return String.format("%02d:%s:%s", hour, time[1], time[2]);
   }
 }
 

@@ -23,13 +23,13 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    int onTimeCount  = 0;
-    for(int time: a) {
-      if(time <= 0) {
-        onTimeCount ++;
+    int onTimeCount = 0;
+    for (int time : a) {
+      if (time <= 0) {
+        onTimeCount++;
       }
 
-      if(onTimeCount >= k) {
+      if (onTimeCount >= k) {
         return "NO";
       }
     }

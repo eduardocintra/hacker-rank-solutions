@@ -1,10 +1,10 @@
 package br.com.eduardocintra.easy.subarraydivision;
 
+import static java.util.stream.Collectors.toList;
+
 import java.io.*;
 import java.util.List;
 import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
 
 class Result {
 
@@ -26,21 +26,21 @@ class Result {
     int numberOfWays = 0;
     int sum = 0;
 
-    for(int i = 0; i < m; i++) {
-      sum+= s.get(i);
+    for (int i = 0; i < m; i++) {
+      sum += s.get(i);
     }
 
-    if(sum == d) {
+    if (sum == d) {
       numberOfWays++;
     }
 
-    for(int i = m; i < s.size(); i++) {
+    for (int i = m; i < s.size(); i++) {
 
-      //Enter the new, out the first
-      sum += s.get(i) - s.get(i-m);
+      // Enter the new, out the first
+      sum += s.get(i) - s.get(i - m);
 
-      if(sum == d) {
-          numberOfWays++;
+      if (sum == d) {
+        numberOfWays++;
       }
     }
     return numberOfWays;

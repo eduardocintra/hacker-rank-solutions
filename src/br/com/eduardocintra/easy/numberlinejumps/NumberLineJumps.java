@@ -29,14 +29,14 @@ class Result {
      * Condition:
      * n ∈ Z && (v1 - v2) > 0
      */
-    if(x2 > x1 && v2 >= v1) {
+    if (x2 > x1 && v2 >= v1) {
       return "NO";
     }
 
     int dx = (x2 - x1);
     int dv = (v1 - v2);
 
-    return dx % dv == 0 && (dx/dv) > 0 ? "YES" : "NO";
+    return dx % dv == 0 && (dx / dv) > 0 ? "YES" : "NO";
   }
 }
 

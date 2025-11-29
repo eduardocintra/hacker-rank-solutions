@@ -1,11 +1,11 @@
 package br.com.eduardocintra.easy.birthdaycakecandles;
 
+import static java.util.stream.Collectors.toList;
+
 import java.io.*;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
 
 class Result {
 

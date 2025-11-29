@@ -22,11 +22,11 @@ class Result {
      */
     int valleysCount = 0;
     int position = 0;
-    for(int i = 0; i < path.length(); i++) {
+    for (int i = 0; i < path.length(); i++) {
       char step = path.charAt(i);
-      if(step == 'U') {
+      if (step == 'U') {
         position++;
-        if(position == 0) {
+        if (position == 0) {
           valleysCount++;
         }
       } else {

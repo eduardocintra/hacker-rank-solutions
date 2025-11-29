@@ -1,10 +1,10 @@
 package br.com.eduardocintra.easy.pickingnumbers;
 
+import static java.util.stream.Collectors.toList;
+
 import java.io.IOException;
 import java.security.InvalidParameterException;
 import java.util.*;
-
-import static java.util.stream.Collectors.toList;
 
 class Result {
 
@@ -22,12 +22,12 @@ class Result {
      */
     Map<Integer, Integer> frequency = new HashMap<Integer, Integer>();
 
-    for(Integer number: a) {
-      frequency.put(number, frequency.getOrDefault(number, 0)+1);
+    for (Integer number : a) {
+      frequency.put(number, frequency.getOrDefault(number, 0) + 1);
     }
 
     int max = 0;
-    for(int number: frequency.keySet()) {
+    for (int number : frequency.keySet()) {
       int count = frequency.get(number) + frequency.getOrDefault(number + 1, 0);
       max = Math.max(max, count);
     }

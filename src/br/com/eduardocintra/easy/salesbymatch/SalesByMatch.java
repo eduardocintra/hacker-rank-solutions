@@ -1,12 +1,12 @@
 package br.com.eduardocintra.easy.salesbymatch;
 
+import static java.util.stream.Collectors.toList;
+
 import java.io.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
 
 class Result {
 
@@ -26,8 +26,8 @@ class Result {
      */
     Set<Integer> pairs = new HashSet<>();
     int totalPairs = 0;
-    for(int color: ar) {
-      if(pairs.contains(color)) {
+    for (int color : ar) {
+      if (pairs.contains(color)) {
         totalPairs++;
         pairs.remove(color);
       } else {
@@ -45,7 +45,8 @@ public class SalesByMatch {
 
     int n = Integer.parseInt(bufferedReader.readLine().trim());
 
-    List<Integer> ar = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+    List<Integer> ar =
+        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
             .map(Integer::parseInt)
             .collect(toList());
 
@@ -58,4 +59,3 @@ public class SalesByMatch {
     bufferedWriter.close();
   }
 }
-

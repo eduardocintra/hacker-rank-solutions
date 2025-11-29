@@ -3,8 +3,6 @@ package br.com.eduardocintra.medium.countergame;
 import java.io.*;
 import java.util.*;
 
-import static java.util.stream.Collectors.joining;
-
 class Result {
 
   /*

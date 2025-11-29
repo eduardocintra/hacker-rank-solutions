@@ -19,11 +19,10 @@ class Result {
      */
     int cumulativeLikes = 0;
     int shared = 5;
-    for(int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; i++) {
       int liked = shared / 2;
       cumulativeLikes += liked;
       shared = liked * 3;
-
     }
     return cumulativeLikes;
   }

@@ -1,12 +1,12 @@
 package br.com.eduardocintra.easy.billdivision;
 
+import static java.util.stream.Collectors.toList;
+
 import java.io.IOException;
 import java.security.InvalidParameterException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-
-import static java.util.stream.Collectors.toList;
 
 class Result {
 
@@ -25,12 +25,12 @@ class Result {
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
     int totalShared = 0;
-    for(Integer value:bill) {
+    for (Integer value : bill) {
       totalShared += value;
     }
 
     int anaPart = (totalShared - bill.get(k)) / 2;
-    System.out.println(anaPart == b ? "Bon Appetit" : (b-anaPart));
+    System.out.println(anaPart == b ? "Bon Appetit" : (b - anaPart));
   }
 }
 

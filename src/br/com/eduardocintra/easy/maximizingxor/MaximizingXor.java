@@ -42,8 +42,7 @@ class Result {
 public class MaximizingXor {
   public static void main(String[] args) throws IOException {
     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-    BufferedWriter bufferedWriter =
-        new BufferedWriter(new OutputStreamWriter(System.out));
+    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
     int l = Integer.parseInt(bufferedReader.readLine().trim());
 

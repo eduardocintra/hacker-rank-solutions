@@ -23,7 +23,7 @@ class Result {
     long max = Long.MIN_VALUE;
     long min = Long.MAX_VALUE;
 
-    for(long value : arr) {
+    for (long value : arr) {
       total += value;
       max = Math.max(max, value);
       min = Math.min(min, value);

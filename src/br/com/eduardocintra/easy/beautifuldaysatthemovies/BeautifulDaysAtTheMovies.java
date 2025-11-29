@@ -24,19 +24,18 @@ class Result {
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
     int beautifulDayCount = 0;
-    for(; i <= j; i++) {
+    for (; i <= j; i++) {
       int reversed = reverseNumber(i);
-      if((i - reversed) % k == 0) {
+      if ((i - reversed) % k == 0) {
         beautifulDayCount++;
       }
-
     }
     return beautifulDayCount;
   }
 
   public static int reverseNumber(int x) {
     int reversed = 0;
-    while(x > 0) {
+    while (x > 0) {
       int digit = x % 10;
       reversed = reversed * 10 + digit;
       x = x / 10;

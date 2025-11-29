@@ -1,10 +1,10 @@
 package br.com.eduardocintra.easy.divisiblesumpairs;
 
+import static java.util.stream.Collectors.toList;
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
 
 class Result {
 

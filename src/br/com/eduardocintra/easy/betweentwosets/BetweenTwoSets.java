@@ -31,13 +31,13 @@ class Result {
     long lcmA = mmc(a);
     long gcdB = mdc(b);
 
-    if(lcmA > gcdB) {
+    if (lcmA > gcdB) {
       return 0;
     }
 
     int count = 0;
-    for(long i = lcmA; i <= gcdB; i+= lcmA) {
-      if(gcdB % i == 0) {
+    for (long i = lcmA; i <= gcdB; i += lcmA) {
+      if (gcdB % i == 0) {
         count++;
       }
     }
@@ -52,7 +52,6 @@ class Result {
     }
     return result;
   }
-
 
   public static long mmc(final List<Integer> numbers) {
     long result = numbers.get(0);

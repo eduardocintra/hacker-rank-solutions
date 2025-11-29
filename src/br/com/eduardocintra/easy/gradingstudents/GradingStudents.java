@@ -1,12 +1,12 @@
 package br.com.eduardocintra.easy.gradingstudents;
 
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
 import java.io.*;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
 
 class Result {
 
@@ -22,18 +22,18 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-      return grades.stream().map(Result::roundGrade).collect(Collectors.toList());
+    return grades.stream().map(Result::roundGrade).collect(Collectors.toList());
   }
 
-    private static int roundGrade(int number) {
-        final int mod = 5;
-        if(number < 38) return number;
+  private static int roundGrade(int number) {
+    final int mod = 5;
+    if (number < 38) return number;
 
-        final int remainder = number % 5;
-        final int diffToNext = remainder == 0 ? 0 : mod - remainder;
+    final int remainder = number % 5;
+    final int diffToNext = remainder == 0 ? 0 : mod - remainder;
 
-        return diffToNext < 3 ? number + diffToNext : number;
-    }
+    return diffToNext < 3 ? number + diffToNext : number;
+  }
 }
 
 public class GradingStudents {

@@ -19,7 +19,7 @@ class Result {
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
     String line = String.join("", Collections.nCopies(n, "#"));
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
       int size = i + 1;
       System.out.printf("%" + n + "s\n", line.substring(0, size));
     }

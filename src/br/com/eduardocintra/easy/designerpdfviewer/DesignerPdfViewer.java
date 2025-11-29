@@ -23,7 +23,7 @@ class Result {
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
     int tallestLetter = 0;
-    for(char c: word.toCharArray()){
+    for (char c : word.toCharArray()) {
       int height = h.get(c - 'a');
       tallestLetter = Math.max(tallestLetter, height);
     }

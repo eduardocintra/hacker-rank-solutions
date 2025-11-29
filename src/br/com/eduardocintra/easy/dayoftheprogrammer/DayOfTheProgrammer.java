@@ -33,7 +33,8 @@ class Result {
     boolean isGregorianCalendar = year >= 1919;
 
     boolean isJulianLeapYear = isJulianCalendar && year % 4 == 0;
-    boolean isGregorianLeapYear = isGregorianCalendar && (year % 400 == 0 || year % 4 == 0 && year % 100 != 0);
+    boolean isGregorianLeapYear =
+        isGregorianCalendar && (year % 400 == 0 || year % 4 == 0 && year % 100 != 0);
     boolean isLeapYear = isJulianLeapYear || isGregorianLeapYear;
 
     return (isLeapYear ? "12.09." : "13.09.") + year;
