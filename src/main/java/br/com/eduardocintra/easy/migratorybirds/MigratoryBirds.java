@@ -20,7 +20,10 @@ class Result {
      * Please, if this code helps you, leave your star on the repository:
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
-    return arr.stream().collect(Collectors.groupingBy(n -> n)).entrySet().stream()
+    return arr.stream()
+        .collect(Collectors.groupingBy(n -> n))
+        .entrySet()
+        .stream()
         .max(
             Comparator.comparingInt(
                     (Map.Entry<Integer, List<Integer>> entry) -> entry.getValue().size())

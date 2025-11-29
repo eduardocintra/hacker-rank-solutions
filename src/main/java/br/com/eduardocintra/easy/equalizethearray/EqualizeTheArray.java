@@ -21,7 +21,10 @@ class Result {
      * https://github.com/eduardocintra/hacker-rank-solutions
      */
     List<List<Integer>> groupedList =
-        arr.stream().collect(Collectors.groupingBy(number -> number)).values().stream()
+        arr.stream()
+            .collect(Collectors.groupingBy(number -> number))
+            .values()
+            .stream()
             .sorted((list1, list2) -> Integer.compare(list2.size(), list1.size()))
             .collect(Collectors.toList());
     int biggestGroup = groupedList.get(0).size();
