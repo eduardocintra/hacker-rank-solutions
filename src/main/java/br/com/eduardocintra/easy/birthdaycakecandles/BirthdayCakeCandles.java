@@ -10,17 +10,16 @@ import java.util.stream.Stream;
 class Result {
 
   /*
-   * Complete the 'birthdayCakeCandles' function below.
+   * 009 - Birthday Cake Candles
+   * Difficulty: Easy
    *
-   * The function is expected to return an INTEGER.
-   * The function accepts INTEGER_ARRAY candles as parameter.
+   * Problem: https://www.hackerrank.com/challenges/birthday-cake-candles/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/birthdaycakecandles/BirthdayCakeCandles.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static int birthdayCakeCandles(List<Integer> candles) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
     int maxCandle = Collections.max(candles);
     return (int) candles.stream().filter(candle -> candle == maxCandle).count();
   }
