@@ -9,17 +9,16 @@ import java.util.stream.*;
 class Result {
 
   /*
-   * Complete the 'diagonalDifference' function below.
+   * 005 - Diagonal Difference
+   * Difficulty: Easy
    *
-   * The function is expected to return an INTEGER.
-   * The function accepts 2D_INTEGER_ARRAY arr as parameter.
+   * Problem: https://www.hackerrank.com/challenges/diagonal-difference/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/diagonaldifference/DiagonalDifference.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static int diagonalDifference(List<List<Integer>> arr) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
     int leftToRighDiagonalSum = 0;
     int rightToLeftDiagonalSum = 0;
 
