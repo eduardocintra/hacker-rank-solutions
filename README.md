@@ -180,10 +180,10 @@ More medium and hard problems coming soon.
 
 I'm a Senior Java Backend Engineer from Brazil, focused on mastering algorithms to reach international remote opportunities.
 
-- GitHub: https://github.com/eduardocintra
-- LinkedIn: https://www.linkedin.com/in/eduardocintramaia
-- HackerRank: https://www.hackerrank.com/profile/eduardocintra
-- Email: eduardocintramaia@gmail.com
+- 🧑‍💻 GitHub: [github.com/eduardocintra](https://github.com/eduardocintra)
+- 💼 LinkedIn: [linkedin.com/in/eduardocintramaia](https://www.linkedin.com/in/eduardocintramaia)
+- 🟢 HackerRank: [hackerrank.com/profile/eduardocintra](https://www.hackerrank.com/profile/eduardocintra)
+- 📧 Email: eduardocintramaia@gmail.com
 
 ---
 
