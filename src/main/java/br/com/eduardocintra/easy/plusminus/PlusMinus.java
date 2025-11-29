@@ -11,16 +11,16 @@ import java.util.stream.Stream;
 class Result {
 
   /*
-   * Complete the 'plusMinus' function below.
+   * 006 - Plus Minus
+   * Difficulty: Easy
    *
-   * The function accepts INTEGER_ARRAY arr as parameter.
+   * Problem: https://www.hackerrank.com/challenges/plus-minus/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/plusminus/PlusMinus.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static void plusMinus(List<Integer> arr) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
     int size = arr.size();
     int positiveCount = 0;
     int negativeCount = 0;
