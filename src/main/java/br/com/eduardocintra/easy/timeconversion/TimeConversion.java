@@ -5,16 +5,16 @@ import java.io.*;
 class Result {
 
   /*
-   * Complete the 'timeConversion' function below.
+   * 010 - Time Conversion
+   * Difficulty: Easy
    *
-   * The function is expected to return a STRING.
-   * The function accepts STRING s as parameter.
+   * Problem: https://www.hackerrank.com/challenges/time-conversion/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/timeconversion/TimeConversion.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
   public static String timeConversion(String s) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
     boolean isAmHour = s.endsWith("AM");
     String[] time = s.substring(0, 8).split(":");
     int hour = Integer.parseInt(time[0]);
