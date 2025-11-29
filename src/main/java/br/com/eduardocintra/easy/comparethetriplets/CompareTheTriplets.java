@@ -10,19 +10,16 @@ import java.util.stream.*;
 class Result {
 
   /*
-   * Complete the 'compareTriplets' function below.
+   * 003 - Compare the Triplets
+   * Difficulty: Easy
    *
-   * The function is expected to return an INTEGER_ARRAY.
-   * The function accepts following parameters:
-   *  1. INTEGER_ARRAY a
-   *  2. INTEGER_ARRAY b
+   * Problem: https://www.hackerrank.com/challenges/compare-the-triplets/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/comparethetriplets/CompareTheTriplets.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
     Integer aliceCount = 0;
     Integer bobCount = 0;
 
