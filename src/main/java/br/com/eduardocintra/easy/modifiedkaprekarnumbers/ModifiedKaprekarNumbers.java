@@ -1,3 +1,5 @@
+package br.com.eduardocintra.easy.modifiedkaprekarnumbers;
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
