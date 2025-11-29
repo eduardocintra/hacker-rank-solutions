@@ -9,17 +9,16 @@ import java.util.stream.*;
 class Result {
 
   /*
-   * Complete the 'simpleArraySum' function below.
+   * 002 - Simple Array Sum
+   * Difficulty: Easy
    *
-   * The function is expected to return an INTEGER.
-   * The function accepts INTEGER_ARRAY ar as parameter.
+   * Problem: https://www.hackerrank.com/challenges/simple-array-sum/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/simplearraysum/SimpleArraySum.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static int simpleArraySum(List<Integer> ar) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
     return ar.stream().reduce(0, Integer::sum);
   }
 }
