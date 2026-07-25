@@ -3,7 +3,6 @@ package br.com.eduardocintra.easy.staircase;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Collections;
 
 class Result {
 
@@ -18,10 +17,10 @@ class Result {
    * https://github.com/eduardocintra/hacker-rank-solutions
    */
   public static void staircase(int n) {
-    String line = String.join("", Collections.nCopies(n, "#"));
+    StringBuilder line = new StringBuilder();
     for (int i = 0; i < n; i++) {
-      int size = i + 1;
-      System.out.printf("%" + n + "s\n", line.substring(0, size));
+      line.append("#");
+      System.out.printf("%" + n + "s%n", line);
     }
   }
 }
