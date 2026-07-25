@@ -3,7 +3,6 @@ package br.com.eduardocintra.easy.birthdaycakecandles;
 import static java.util.stream.Collectors.toList;
 
 import java.io.*;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -20,8 +19,19 @@ class Result {
    * https://github.com/eduardocintra/hacker-rank-solutions
    */
   public static int birthdayCakeCandles(List<Integer> candles) {
-    int maxCandle = Collections.max(candles);
-    return (int) candles.stream().filter(candle -> candle == maxCandle).count();
+    int tallest = 0;
+    int units = 0;
+
+    for (int value : candles) {
+      if (value > tallest) {
+        tallest = value;
+        units = 1;
+      } else if (value == tallest) {
+        units++;
+      }
+    }
+
+    return units;
   }
 }
 
