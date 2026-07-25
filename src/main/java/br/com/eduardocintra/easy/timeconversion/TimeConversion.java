@@ -15,13 +15,16 @@ class Result {
    * https://github.com/eduardocintra/hacker-rank-solutions
    */
   public static String timeConversion(String s) {
-    boolean isAmHour = s.endsWith("AM");
-    String[] time = s.substring(0, 8).split(":");
-    int hour = Integer.parseInt(time[0]);
-    if (isAmHour && hour == 12) hour = 0;
-    if (!isAmHour && hour != 12) hour += 12;
+    int hour = Integer.parseInt(s.substring(0, 2));
+    String period = s.substring(8);
 
-    return String.format("%02d:%s:%s", hour, time[1], time[2]);
+    if ("PM".equals(period) && hour != 12) {
+      hour += 12;
+    } else if ("AM".equals(period) && hour == 12) {
+      hour = 0;
+    }
+
+    return String.format("%02d%s", hour, s.substring(2, 8));
   }
 }
 
