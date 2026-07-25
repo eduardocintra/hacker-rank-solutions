@@ -11,17 +11,16 @@ import java.util.stream.IntStream;
 class Result {
 
   /*
-   * Complete the 'gradingStudents' function below.
+   * 011 - Grading Students
+   * Difficulty: Easy
    *
-   * The function is expected to return an INTEGER_ARRAY.
-   * The function accepts INTEGER_ARRAY grades as parameter.
+   * Problem: https://www.hackerrank.com/challenges/grading/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/gradingstudents/GradingStudents.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static List<Integer> gradingStudents(List<Integer> grades) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
     return grades.stream().map(Result::roundGrade).collect(Collectors.toList());
   }
 
