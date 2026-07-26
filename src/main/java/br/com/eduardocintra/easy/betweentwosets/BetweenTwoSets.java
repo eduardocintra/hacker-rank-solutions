@@ -15,34 +15,31 @@ import java.util.stream.*;
 class Result {
 
   /*
-   * Complete the 'getTotalX' function below.
+   * 015 - Between Two Sets
+   * Difficulty: Easy
    *
-   * The function is expected to return an INTEGER.
-   * The function accepts following parameters:
-   *  1. INTEGER_ARRAY a
-   *  2. INTEGER_ARRAY b
+   * Problem: https://www.hackerrank.com/challenges/between-two-sets/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/betweentwosets/BetweenTwoSets.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static int getTotalX(List<Integer> a, List<Integer> b) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
-    long lcmA = mmc(a);
-    long gcdB = mdc(b);
+    long lcm = mmc(a);
+    long gcd = mdc(b);
 
-    if (lcmA > gcdB) {
+    if (lcm > gcd) {
       return 0;
     }
 
-    int count = 0;
-    for (long i = lcmA; i <= gcdB; i += lcmA) {
-      if (gcdB % i == 0) {
-        count++;
+    int validNumbersCount = 0;
+    for (long candidate = lcm; candidate <= gcd; candidate += lcm) {
+      if (gcd % candidate == 0) {
+        validNumbersCount++;
       }
     }
 
-    return count;
+    return validNumbersCount;
   }
 
   public static long mdc(final List<Integer> numbers) {
@@ -53,16 +50,16 @@ class Result {
     return result;
   }
 
+  public static long mdc(final long a, final long b) {
+    return b == 0 ? a : mdc(b, a % b);
+  }
+
   public static long mmc(final List<Integer> numbers) {
     long result = numbers.get(0);
     for (int i = 1; i < numbers.size(); i++) {
       result = mmc(result, numbers.get(i));
     }
     return result;
-  }
-
-  public static long mdc(final long a, final long b) {
-    return b == 0 ? a : mdc(b, a % b);
   }
 
   public static long mmc(final long a, long b) {
