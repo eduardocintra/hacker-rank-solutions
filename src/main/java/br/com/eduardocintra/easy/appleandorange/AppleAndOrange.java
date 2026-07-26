@@ -11,23 +11,17 @@ import java.util.stream.Stream;
 class Result {
 
   /*
-   * Complete the 'countApplesAndOranges' function below.
+   * 012 - Apple and Orange
+   * Difficulty: Easy
    *
-   * The function accepts following parameters:
-   *  1. INTEGER s
-   *  2. INTEGER t
-   *  3. INTEGER a
-   *  4. INTEGER b
-   *  5. INTEGER_ARRAY apples
-   *  6. INTEGER_ARRAY oranges
+   * Problem: https://www.hackerrank.com/challenges/apple-and-orange/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/appleandorange/AppleAndOrange.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static void countApplesAndOranges(
       int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
     int applesOnHouse = countFruitsOnHouse(apples, a, s, t);
     int orangesOnHouse = countFruitsOnHouse(oranges, b, s, t);
 
