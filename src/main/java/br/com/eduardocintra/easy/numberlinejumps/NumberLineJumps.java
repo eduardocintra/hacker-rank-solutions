@@ -5,38 +5,19 @@ import java.io.*;
 class Result {
 
   /*
-   * Complete the 'kangaroo' function below.
+   * 013 - Number Line Jumps
+   * Difficulty: Easy
    *
-   * The function is expected to return a STRING.
-   * The function accepts following parameters:
-   *  1. INTEGER x1
-   *  2. INTEGER v1
-   *  3. INTEGER x2
-   *  4. INTEGER v2
+   * Problem: https://www.hackerrank.com/challenges/kangaroo/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/numberlinejumps/NumberLineJumps.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static String kangaroo(int x1, int v1, int x2, int v2) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     *
-     * x1 + n * v1 = x2 + n * v2
-     * n * v1 = x2 - x1 + n * v2
-     * n * v1 - n * v2 = x2 - x1
-     * n ( v1 - v2 ) = x2 - x1
-     * n = (x2 - x1) / (v1 - v2)
-     *
-     * Condition:
-     * n ∈ Z && (v1 - v2) > 0
-     */
-    if (x2 > x1 && v2 >= v1) {
-      return "NO";
-    }
+    if (v2 >= v1) return "NO";
 
-    int dx = (x2 - x1);
-    int dv = (v1 - v2);
-
-    return dx % dv == 0 && (dx / dv) > 0 ? "YES" : "NO";
+    return (x2 - x1) % (v1 - v2) == 0 ? "YES" : "NO";
   }
 }
 
