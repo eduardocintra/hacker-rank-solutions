@@ -13,29 +13,25 @@ import java.util.stream.*;
 class Result {
 
   /*
-   * Complete the 'maximizingXor' function below.
+   * 014 - Maximizing XOR
+   * Difficulty: Easy
    *
-   * The function is expected to return an INTEGER.
-   * The function accepts following parameters:
-   *  1. INTEGER l
-   *  2. INTEGER r
+   * Problem: https://www.hackerrank.com/challenges/maximizing-xor/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/maximizingxor/MaximizingXor.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static int maximizingXor(int l, int r) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
-    int max = 0;
+    int xor = l ^ r;
+    int max = 1;
 
-    for (; l <= r; l++) {
-      for (int i = l; i <= r; i++) {
-        int xor = l ^ i;
-        if (xor > max) max = xor;
-      }
+    while (xor > 0) {
+      xor >>= 1;
+      max <<= 1;
     }
 
-    return max;
+    return max - 1;
   }
 }
 
