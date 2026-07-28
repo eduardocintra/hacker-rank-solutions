@@ -4,46 +4,40 @@ import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
-import java.util.stream.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
 
 class Result {
 
   /*
-   * Complete the 'breakingRecords' function below.
+   * 016 - Breaking the Records
+   * Difficulty: Easy
    *
-   * The function is expected to return an INTEGER_ARRAY.
-   * The function accepts INTEGER_ARRAY scores as parameter.
+   * Problem: https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/breakingtherecords/BreakingTheRecords.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static List<Integer> breakingRecords(List<Integer> scores) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
     int minScore = scores.get(0);
     int maxScore = scores.get(0);
-    int countMaxScore = 0;
-    int countMinScore = 0;
 
-    for (Integer score : scores) {
+    int minBreaks = 0;
+    int maxBreaks = 0;
+
+    for (int i = 1; i < scores.size(); i++) {
+      int score = scores.get(i);
       if (score > maxScore) {
-        countMaxScore++;
         maxScore = score;
-      }
-      if (score < minScore) {
-        countMinScore++;
+        maxBreaks++;
+      } else if (score < minScore) {
         minScore = score;
+        minBreaks++;
       }
     }
-
-    return Arrays.asList(countMaxScore, countMinScore);
+    return Arrays.asList(maxBreaks, minBreaks);
   }
 }
 
