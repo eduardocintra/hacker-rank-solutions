@@ -9,27 +9,28 @@ import java.util.stream.*;
 class Result {
 
   /*
-   * Complete the 'divisibleSumPairs' function below.
+   * 018 - Divisible Sum Pairs
+   * Difficulty: Easy
    *
-   * The function is expected to return an INTEGER.
-   * The function accepts following parameters:
-   *  1. INTEGER n
-   *  2. INTEGER k
-   *  3. INTEGER_ARRAY ar
+   * Problem: https://www.hackerrank.com/challenges/divisible-sum-pairs/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/divisiblesumpairs/DivisibleSumPairs.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static int divisibleSumPairs(int n, int k, List<Integer> ar) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
-    int totalOfPairs = 0;
-    for (int i = 0; i < n; i++) {
-      for (int j = i; j < n; j++) {
-        if (i < j && (ar.get(i) + ar.get(j)) % k == 0) totalOfPairs++;
-      }
+    int[] remainderCount = new int[k];
+    int pairCount = 0;
+
+    for (int number : ar) {
+      int remainder = number % k;
+      int complement = (k - remainder) % k;
+
+      pairCount += remainderCount[complement];
+      remainderCount[remainder]++;
     }
-    return totalOfPairs;
+
+    return pairCount;
   }
 }
 
