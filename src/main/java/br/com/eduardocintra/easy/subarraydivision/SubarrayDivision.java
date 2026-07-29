@@ -9,20 +9,16 @@ import java.util.stream.Stream;
 class Result {
 
   /*
-   * Complete the 'birthday' function below.
+   * 017 - Subarray Division
+   * Difficulty: Easy
    *
-   * The function is expected to return an INTEGER.
-   * The function accepts following parameters:
-   *  1. INTEGER_ARRAY s
-   *  2. INTEGER d
-   *  3. INTEGER m
+   * Problem: https://www.hackerrank.com/challenges/the-birthday-bar/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/subarraydivision/SubarrayDivision.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static int birthday(List<Integer> s, int d, int m) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
     int numberOfWays = 0;
     int sum = 0;
 
@@ -35,8 +31,6 @@ class Result {
     }
 
     for (int i = m; i < s.size(); i++) {
-
-      // Enter the new, out the first
       sum += s.get(i) - s.get(i - m);
 
       if (sum == d) {
