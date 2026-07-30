@@ -1,43 +1,34 @@
 package br.com.eduardocintra.easy.dayoftheprogrammer;
 
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
-import java.util.stream.*;
 
 class Result {
 
   /*
-   * Complete the 'dayOfProgrammer' function below.
+   * 020 - Day of the Programmer
+   * Difficulty: Easy
    *
-   * The function is expected to return a STRING.
-   * The function accepts INTEGER year as parameter.
+   * Problem: https://www.hackerrank.com/challenges/day-of-the-programmer
+   * Solution: src/main/java/br/com/eduardocintra/easy/dayoftheprogrammer/DayOfTheProgrammer.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static String dayOfProgrammer(int year) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
-    // Transition from the Julian to Gregorian calendar
+
     if (year == 1918) {
-      return "26.09." + year;
+      return "26.09.1918";
     }
 
-    boolean isJulianCalendar = year <= 1917;
-    boolean isGregorianCalendar = year >= 1919;
+    boolean julianLeapYear = year <= 1917 && year % 4 == 0;
+    boolean gregorianLeapYear =
+        year > 1918 && (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0));
 
-    boolean isJulianLeapYear = isJulianCalendar && year % 4 == 0;
-    boolean isGregorianLeapYear =
-        isGregorianCalendar && (year % 400 == 0 || year % 4 == 0 && year % 100 != 0);
-    boolean isLeapYear = isJulianLeapYear || isGregorianLeapYear;
+    if (julianLeapYear || gregorianLeapYear) {
+      return "12.09." + year;
+    }
 
-    return (isLeapYear ? "12.09." : "13.09.") + year;
+    return "13.09." + year;
   }
 }
 
