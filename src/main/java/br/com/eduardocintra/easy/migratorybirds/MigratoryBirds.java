@@ -3,33 +3,43 @@ package br.com.eduardocintra.easy.migratorybirds;
 import static java.util.stream.Collectors.toList;
 
 import java.io.*;
-import java.util.*;
-import java.util.stream.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
 
 class Result {
 
   /*
-   * Complete the 'migratoryBirds' function below.
+   * 019 - Migratory Birds
+   * Difficulty: Easy
    *
-   * The function is expected to return an INTEGER.
-   * The function accepts INTEGER_ARRAY arr as parameter.
+   * Problem: https://www.hackerrank.com/challenges/migratory-birds/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/migratorybirds/MigratoryBirds.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static int migratoryBirds(List<Integer> arr) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
-    return arr.stream()
-        .collect(Collectors.groupingBy(n -> n))
-        .entrySet()
-        .stream()
-        .max(
-            Comparator.comparingInt(
-                    (Map.Entry<Integer, List<Integer>> entry) -> entry.getValue().size())
-                .thenComparingInt((Map.Entry<Integer, List<Integer>> entry) -> -entry.getKey()))
-        .map(Map.Entry::getKey)
-        .orElse(0);
+
+    Map<Integer, Integer> frequency = new HashMap<>();
+    int mostFrequent = 0;
+    int result = 0;
+
+    for (int type : arr) {
+
+      int count = frequency.getOrDefault(type, 0) + 1;
+      frequency.put(type, count);
+
+      if (count > mostFrequent) {
+        mostFrequent = count;
+        result = type;
+      } else if (count == mostFrequent) {
+        result = Math.min(result, type);
+      }
+    }
+
+    return result;
   }
 }
 
