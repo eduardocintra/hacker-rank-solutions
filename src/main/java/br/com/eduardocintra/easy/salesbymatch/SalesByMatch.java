@@ -3,38 +3,34 @@ package br.com.eduardocintra.easy.salesbymatch;
 import static java.util.stream.Collectors.toList;
 
 import java.io.*;
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 import java.util.stream.Stream;
 
 class Result {
 
   /*
-   * Complete the 'sockMerchant' function below.
+   * 022 - Sales by Match
+   * Difficulty: Easy
    *
-   * The function is expected to return an INTEGER.
-   * The function accepts following parameters:
-   *  1. INTEGER n
-   *  2. INTEGER_ARRAY ar
+   * Problem: https://www.hackerrank.com/challenges/sock-merchant/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/salesbymatch/SalesByMatch.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static int sockMerchant(int n, List<Integer> ar) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
-    Set<Integer> pairs = new HashSet<>();
-    int totalPairs = 0;
-    for (int color : ar) {
-      if (pairs.contains(color)) {
-        totalPairs++;
-        pairs.remove(color);
-      } else {
-        pairs.add(color);
+    Map<Integer, Integer> frequencies = new HashMap<Integer, Integer>();
+    int pairs = 0;
+    for (int sockColor : ar) {
+      int frequency = frequencies.getOrDefault(sockColor, 0) + 1;
+      frequencies.put(sockColor, frequency);
+      if (frequency % 2 == 0) {
+        pairs++;
       }
     }
-    return totalPairs;
+    return pairs;
   }
 }
 
