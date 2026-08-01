@@ -1,12 +1,12 @@
 package br.com.eduardocintra.easy.billdivision;
 
-import static java.util.stream.Collectors.toList;
-
 import java.io.IOException;
 import java.security.InvalidParameterException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+
+import static java.util.stream.Collectors.toList;
 
 class Result {
 
