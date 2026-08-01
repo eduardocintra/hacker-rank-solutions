@@ -11,26 +11,29 @@ import java.util.Scanner;
 class Result {
 
   /*
-   * Complete the 'bonAppetit' function below.
+   * 021 - Bill Division
+   * Difficulty: Easy
    *
-   * The function accepts following parameters:
-   *  1. INTEGER_ARRAY bill
-   *  2. INTEGER k
-   *  3. INTEGER b
+   * Problem: https://www.hackerrank.com/challenges/bon-appetit/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/billdivision/BillDivision.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static void bonAppetit(List<Integer> bill, int k, int b) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
-    int totalShared = 0;
+
+    int total = 0;
     for (Integer value : bill) {
-      totalShared += value;
+      total += value;
     }
 
-    int anaPart = (totalShared - bill.get(k)) / 2;
-    System.out.println(anaPart == b ? "Bon Appetit" : (b - anaPart));
+    int annaShare = (total - bill.get(k)) / 2;
+    if (annaShare == b) {
+      System.out.println("Bon Appetit");
+      return;
+    }
+
+    System.out.println(b - annaShare);
   }
 }
 
