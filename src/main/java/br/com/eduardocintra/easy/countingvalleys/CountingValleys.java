@@ -7,33 +7,33 @@ import java.util.Scanner;
 class Result {
 
   /*
-   * Complete the 'countingValleys' function below.
+   * 024 - Counting Valleys
+   * Difficulty: Easy
    *
-   * The function is expected to return an INTEGER.
-   * The function accepts following parameters:
-   *  1. INTEGER steps
-   *  2. STRING path
+   * Problem: https://www.hackerrank.com/challenges/counting-valleys/problem
+   * Solution: src/main/java/br/com/eduardocintra/easy/countingvalleys/CountingValleys.java
+   *
+   * If this code helped you, please leave a ⭐ on:
+   * https://github.com/eduardocintra/hacker-rank-solutions
    */
-
   public static int countingValleys(int steps, String path) {
-    /*
-     * Please, if this code helps you, leave your star on the repository:
-     * https://github.com/eduardocintra/hacker-rank-solutions
-     */
-    int valleysCount = 0;
-    int position = 0;
-    for (int i = 0; i < path.length(); i++) {
-      char step = path.charAt(i);
-      if (step == 'U') {
-        position++;
-        if (position == 0) {
-          valleysCount++;
-        }
+
+    int valleyCount = 0;
+    int altitude = 0;
+    for (char p : path.toCharArray()) {
+
+      if (p == 'U') {
+        altitude++;
       } else {
-        position--;
+        altitude--;
+      }
+
+      if (p == 'U' && altitude == 0) {
+        valleyCount++;
       }
     }
-    return valleysCount;
+
+    return valleyCount;
   }
 }
 
